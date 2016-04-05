@@ -1,0 +1,8 @@
+[[plugins]]
+repo = 'tomasr/molokai'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'Shougo/vimfiler'

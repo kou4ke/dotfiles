@@ -1,0 +1,14 @@
+[push]
+	default = current
+[alias]
+	st = status
+	b = branch
+	co = checkout
+	di = diff
+    pl = pull --no-commit --rebase
+	dc = diff --cached
+	cl = config --list
+[color]
+	ui = true
+[core]
+	editor = vim
