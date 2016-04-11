@@ -18,11 +18,11 @@ endif
 
 " TOML を読み込み、キャッシュしておく
 if dein#load_state(s:dein_dir)
-  " 設定開始
-  call dein#begin(s:dein_dir)
   " プラグインリストを収めた TOML ファイル
   let s:toml      = '~/.vim/rc/dein.toml'
   let s:lazy_toml = '~/.vim/rc/dein_lazy.toml'
+  " 設定開始
+  call dein#begin(s:dein_dir, [s:toml, s:lazy_toml])
   call dein#load_toml(s:toml,      {'lazy': 0})
   call dein#load_toml(s:lazy_toml, {'lazy': 1})
   " 設定終了
@@ -58,3 +58,4 @@ set whichwrap=b,s,[,],<,>
 set backspace=indent,eol,start
 set wildmenu
 set clipboard=unnamed
+
