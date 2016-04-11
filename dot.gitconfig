@@ -12,3 +12,6 @@
 	ui = true
 [core]
 	editor = vim
+[user]
+	name = watanabe_kosuke
+	email = kosuke.watanabe@drecom.co.jp
