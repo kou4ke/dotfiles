@@ -138,6 +138,7 @@ case ${OSTYPE} in
         #Mac用の設定
         export CLICOLOR=1
         alias ls='ls -G -F'
+        alias updatedb='sudo /usr/libexec/locate.updatedb'
         ;;
     linux*)
         PROMPT="%{${fg[yellow]}%}%D %T%{${reset_color}%}%{${fg[cyan]}%}[%n@%m]%{${reset_color}%} %~
