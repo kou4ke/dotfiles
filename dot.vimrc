@@ -44,9 +44,9 @@ colorscheme molokai
 set number
 set title
 set ambiwidth=double
-set tabstop=2
 set expandtab
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set smartindent
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
