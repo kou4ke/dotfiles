@@ -124,8 +124,9 @@ alias grep="grep --color"
 
 alias g="hub"
 
-
 alias mkdir='mkdir -p'
+
+alias cl='cal `date '+%Y'`'
 
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
