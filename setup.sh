@@ -6,5 +6,5 @@
 for file in `ls -d dot.*`
 do
   echo $file
-  ln -sv $HOME/dotfiles/$file $HOME/${file#dot}
+  ln -nfsv $HOME/dotfiles/$file $HOME/${file#dot}
 done
