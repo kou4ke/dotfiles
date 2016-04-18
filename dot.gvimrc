@@ -1,1 +1,1 @@
-set guifont=Ricty Dimnished:h13
+set guifont=Ricty\ Diminished\ Regular:h16
