@@ -5,6 +5,16 @@ repo = 'tomasr/molokai'
 repo = 'Shougo/unite.vim'
 
 [[plugins]]
+repo = 'Shougo/unite-outline'
+depends = 'unite'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'Shougo/neocomplcache.vim'
+
+[[plugins]]
 repo = 'Shougo/vimfiler'
 
 [[plugins]]
