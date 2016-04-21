@@ -64,20 +64,8 @@ set wildmenu
 set clipboard=unnamed
 
 source dot.vimrc.search
+source dot.vimrc.unite
 
 " vimshell
 nnoremap <silent> vp :VimShellPop<CR>
-
-" Unite
-let g:unite_enable_start_insert = 1
-nnoremap <silent> <C-f> :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
-inoremap <silent> <C-f> <ESC>:<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
-nnoremap <silent> <C-b> :<C-u>Unite buffer file_mru<CR>
-inoremap <silent> <C-b> <ESC>:<C-u>Unite buffer file_mru<CR>
-
-nnoremap <silent> ,uf :<C-u>Unite file<CR>
-nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
-nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
-nnoremap <silent> ,uo :<C-u>Unite outline<CR>
-nnoremap <silent> ,uh :<C-u>Unite help<CR>
 
