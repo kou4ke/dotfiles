@@ -40,7 +40,7 @@ endif
 " settings
 " -------------------------------------------------
 syntax on
-colorscheme molokai
+filetype plugin indent on
 set nobackup
 set number
 set title
@@ -63,8 +63,10 @@ set backspace=indent,eol,start
 set wildmenu
 set clipboard=unnamed
 
-source dot.vimrc.search
-source dot.vimrc.unite
+colorscheme molokai
+
+source ~/dotfiles/dot.vimrc.search
+source ~/dotfiles/dot.vimrc.unite
 
 " vimshell
 nnoremap <silent> vp :VimShellPop<CR>
