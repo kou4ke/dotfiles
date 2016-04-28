@@ -1,3 +1,32 @@
 [[plugins]]
 repo = 'tpope/vim-endwise'
 on_ft = ['ruby']
+
+[[plugins]]
+repo = 'tpope/vim-rails'
+on_ft = ['ruby']
+
+[[plugins]]
+repo = 'vim-ruby/vim-ruby'
+on_ft = ['ruby']
+
+[[plugins]]
+repo = 'slim-template/vim-slim'
+on_ft = ['slim']
+
+[[plugins]]
+repo = 'tpope/vim-markdown'
+on_ft = ['markdown']
+
+[[plugins]]
+repo = 'OmniSharp/omnisharp-vim'
+on_ft = ['cs']
+[build]
+'windows'='MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"'
+'mac'='xbuild server/OmniSharp.sln'
+'unix'='xbuild server/OmniSharp.sln'
+
+[[plugins]]
+repo = 'OrangeT/vim-csharp'
+on_ft = ['cs']
+
