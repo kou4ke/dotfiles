@@ -31,4 +31,5 @@ on_ft = ['cs']
 
 [[plugins]]
 repo = 'scrooloose/syntastic'
-on_ft = ['cs', 'ruby', 'html', 'css', 'scss', 'slim', 'yaml', 'zsh']
+on_ft = ['cs', 'ruby', 'javascript', 'slim', 'html', 'css', 'scss', 'yaml', 'zsh']
+
