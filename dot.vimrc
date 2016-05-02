@@ -68,6 +68,7 @@ colorscheme molokai
 source ~/dotfiles/vimrc.search
 source ~/dotfiles/vimrc.unite
 source ~/dotfiles/vimrc.syntastic
+source ~/dotfiles/vimrc.completion
 
 " vimshell
 nnoremap <silent> vp :VimShellPop<CR>
