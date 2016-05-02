@@ -1,6 +1,6 @@
 [[plugins]]
 repo = 'tpope/vim-endwise'
-on_ft = ['ruby']
+on_ft = ['ruby', 'vim', 'zsh']
 
 [[plugins]]
 repo = 'tpope/vim-rails'
@@ -32,4 +32,8 @@ on_ft = ['cs']
 [[plugins]]
 repo = 'scrooloose/syntastic'
 on_ft = ['cs', 'ruby', 'javascript', 'slim', 'html', 'css', 'scss', 'yaml', 'zsh']
+
+[[plugins]]
+repo = 'tpope/vim-dispatch'
+on_ft = ['cs']
 
