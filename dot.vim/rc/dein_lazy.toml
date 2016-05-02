@@ -30,10 +30,6 @@ repo = 'OrangeT/vim-csharp'
 on_ft = ['cs']
 
 [[plugins]]
-repo = 'scrooloose/syntastic'
-on_ft = ['cs', 'ruby', 'javascript', 'slim', 'html', 'css', 'scss', 'yaml', 'zsh']
-
-[[plugins]]
 repo = 'tpope/vim-dispatch'
 on_ft = ['cs']
 
