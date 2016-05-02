@@ -21,12 +21,14 @@ on_ft = ['markdown']
 [[plugins]]
 repo = 'OmniSharp/omnisharp-vim'
 on_ft = ['cs']
-[build]
-'windows'='MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"'
-'mac'='xbuild server/OmniSharp.sln'
-'unix'='xbuild server/OmniSharp.sln'
+build = 'xbuild server/OmniSharp.sln' # on mac and linux
+## on windows
+## build = 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"'
 
 [[plugins]]
 repo = 'OrangeT/vim-csharp'
 on_ft = ['cs']
 
+[[plugins]]
+repo = 'scrooloose/syntastic'
+on_ft = ['cs', 'ruby', 'html', 'css', 'scss', 'slim', 'yaml', 'zsh']

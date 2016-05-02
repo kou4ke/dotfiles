@@ -1,4 +1,7 @@
 [[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
 repo = 'tomasr/molokai'
 
 [[plugins]]
@@ -10,6 +13,9 @@ depends = 'unite'
 
 [[plugins]]
 repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
 
 [[plugins]]
 repo = 'Shougo/neocomplcache.vim'
