@@ -70,6 +70,7 @@ source ~/dotfiles/vimrc.unite
 source ~/dotfiles/vimrc.syntastic
 source ~/dotfiles/vimrc.completion
 source ~/dotfiles/vimrc.git
+source ~/dotfiles/vimrc.vimfiler
 
 " vimshell
 nnoremap <silent> vp :VimShellPop<CR>
