@@ -65,8 +65,9 @@ set clipboard=unnamed
 
 colorscheme molokai
 
-source ~/dotfiles/dot.vimrc.search
-source ~/dotfiles/dot.vimrc.unite
+source ~/dotfiles/vimrc.search
+source ~/dotfiles/vimrc.unite
+source ~/dotfiles/vimrc.syntastic
 
 " vimshell
 nnoremap <silent> vp :VimShellPop<CR>
