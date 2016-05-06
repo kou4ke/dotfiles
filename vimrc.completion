@@ -31,7 +31,8 @@ let g:neocomplete#max_list = 20
 let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
     \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
+    \ 'scheme' : $HOME.'/.gosh_completions',
+    \ 'cs' : $HOME.'/.vim/dict/unity.dict'
         \ }
 
 " Define keyword.
