@@ -72,6 +72,27 @@ source ~/dotfiles/vimrc.completion
 source ~/dotfiles/vimrc.git
 source ~/dotfiles/vimrc.vimfiler
 
+" main operation
+"カーソルを表示行で移動する。物理行移動は<C-n>,<C-p>
+nnoremap j gj
+nnoremap k gk
+nnoremap <Down> gj
+nnoremap <Up>   gk
+nnoremap gj j
+nnoremap gk k
+
+
+nnoremap <Space>l <C-l>
+nnoremap <C-h> ^
+nnoremap <C-l> $
+nnoremap <C-j> }
+nnoremap <C-k> {
+
 " vimshell
 nnoremap <silent> vp :VimShellPop<CR>
+
+" tab operation
+nnoremap <silent> tn<CR> :<C-u>:tabnext<CR>
+nnoremap <silent> tw<CR> :<C-u>:tabnew<CR>
+nnoremap <silent> tc<CR> :<C-u>:tabclose<CR>
 
