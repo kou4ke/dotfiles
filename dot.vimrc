@@ -92,7 +92,6 @@ nnoremap <C-k> {
 nnoremap <silent> vp :VimShellPop<CR>
 
 " tab operation
-nnoremap <silent> tn<CR> :<C-u>:tabnext<CR>
-nnoremap <silent> tw<CR> :<C-u>:tabnew<CR>
+nnoremap <silent> tn<CR> :<C-u>:tabnew<CR>
 nnoremap <silent> tc<CR> :<C-u>:tabclose<CR>
 
