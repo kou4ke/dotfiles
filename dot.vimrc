@@ -83,8 +83,11 @@ nnoremap gk k
 
 
 nnoremap <Space>l <C-l>
+nnoremap ,lc :<C-u>lcd %:h<CR>
 nnoremap <C-h> ^
+vnoremap <C-h> ^
 nnoremap <C-l> $
+vnoremap <C-l> $
 nnoremap <C-j> }
 nnoremap <C-k> {
 
