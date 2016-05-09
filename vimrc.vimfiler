@@ -2,3 +2,9 @@ let g:vimfiler_as_default_explorer = 1
 nnoremap <silent>,fe :<C-U>VimFilerExplorer<CR>
 nnoremap <silent>,ff :<C-U>VimFiler<CR>
 
+augroup cmd_vimfiler
+  autocmd!
+  autocmd Filetype vimfiler nmap <silent><buffer>q <Plug>(vimfiler_exit)
+  autocmd Filetype vimfiler nmap <silent><buffer>Q <Plug>(vimfiler_hide)
+augroup END
+
