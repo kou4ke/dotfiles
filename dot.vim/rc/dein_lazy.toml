@@ -3,6 +3,10 @@ repo = 'tpope/vim-endwise'
 on_ft = ['ruby', 'vim', 'zsh']
 
 [[plugins]]
+repo = 'kana/vim-smartinput'
+on_ft = ['cs']
+
+[[plugins]]
 repo = 'tpope/vim-rails'
 on_ft = ['ruby']
 

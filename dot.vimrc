@@ -98,3 +98,8 @@ nnoremap <silent> vp :VimShellPop<CR>
 nnoremap <silent> tn<CR> :<C-u>:tabnew<CR>
 nnoremap <silent> tc<CR> :<C-u>:tabclose<CR>
 
+" indent settings
+augroup fileTypeIndent
+  autocmd!
+  autocmd BufNewFile,BufRead *.cs setlocal tabstop=4 softtabstop=4 shiftwidth=4
+augroup END
