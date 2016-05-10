@@ -91,6 +91,8 @@ nnoremap <C-l> $
 vnoremap <C-l> $
 nnoremap <C-j> }
 nnoremap <C-k> {
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
 
 " vimshell
 nnoremap <silent> vp :VimShellPop<CR>
