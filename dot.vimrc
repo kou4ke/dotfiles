@@ -84,6 +84,7 @@ nnoremap gj j
 nnoremap gk k
 
 
+let mapleader = '¥'
 nnoremap <Space>l <C-l>
 nnoremap ,lc :<C-u>lcd %:h<CR>
 nnoremap <C-h> ^
