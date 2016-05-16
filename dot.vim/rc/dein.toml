@@ -5,7 +5,7 @@ repo = 'Shougo/dein.vim'
 repo = 'tomasr/molokai'
 
 [[plugins]]
-repo = 'itchyny/lightline.vim'
+repo = 'bling/vim-airline'
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
