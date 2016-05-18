@@ -6,6 +6,5 @@ augroup cmd_vimfiler
   autocmd!
   autocmd Filetype vimfiler nmap <silent><buffer>q <Plug>(vimfiler_exit)
   autocmd Filetype vimfiler nmap <silent><buffer>Q <Plug>(vimfiler_hide)
-  autocmd FileType vimfiler call unite#custom_default_action('directory', 'lcd')
 augroup END
 
