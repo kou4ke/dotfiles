@@ -65,6 +65,7 @@ set clipboard=unnamed
 set laststatus=2
 
 colorscheme molokai
+let mapleader = '¥'
 
 source ~/dotfiles/vimrc.search
 source ~/dotfiles/vimrc.unite
@@ -84,7 +85,6 @@ nnoremap gj j
 nnoremap gk k
 
 
-let mapleader = '¥'
 nnoremap <Space>l <C-l>
 nnoremap ,lc :<C-u>lcd %:h<CR>
 nnoremap <C-h> ^
