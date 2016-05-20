@@ -42,3 +42,6 @@ repo = 'kmnk/vim-unite-giti'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'rking/ag.vim'
