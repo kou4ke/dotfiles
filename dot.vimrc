@@ -41,6 +41,9 @@ endif
 " -------------------------------------------------
 syntax on
 filetype plugin indent on
+set enc=utf-8
+set fenc=utf-8
+set fencs=iso-2022-jp,utf-8,euc-jp,cp932,sjis
 set nobackup
 set number
 set title
@@ -98,6 +101,11 @@ inoremap <C-b> <Left>
 
 " vimshell
 nnoremap <silent> vp :VimShellPop<CR>
+augroup cmd_vimshell
+  autocmd!
+  autocmd Filetype vimshell nmap <silent><buffer>q <Plug>(vimshell_exit)
+  autocmd Filetype vimshell nmap <silent><buffer>Q <Plug>(vimshell_hide)
+augroup END
 
 " tab operation
 nnoremap <silent> tn<CR> :<C-u>:tabnew<CR>
