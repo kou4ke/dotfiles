@@ -43,7 +43,7 @@ syntax on
 filetype plugin indent on
 set enc=utf-8
 set fenc=utf-8
-set fencs=iso-2022-jp,utf-8,euc-jp,cp932,sjis
+set fencs=utf-8,iso-2022-jp,euc-jp,cp932,sjis
 set nobackup
 set number
 set title
