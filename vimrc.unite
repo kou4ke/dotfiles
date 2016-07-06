@@ -22,6 +22,12 @@ nnoremap <silent> ,uh :<C-u>Unite help<CR>
 nnoremap <silent> ,up :<C-u>Unite file_rec/async:!<CR>
 nnoremap <silent> ,ub :<C-u>Unite bookmark<CR>
 
+" grep検索
+nnoremap <silent> ,ug  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+" カーソル位置の単語をgrep検索
+nnoremap <silent> ,uG :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+" grep検索結果の再呼出
+nnoremap <silent> ,ur  :<C-u>UniteResume search-buffer<CR>
 
 " unite.vim上でのキーマッピング
 autocmd FileType unite call s:unite_my_settings()
