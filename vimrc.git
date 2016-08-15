@@ -5,3 +5,6 @@ nnoremap <silent>,gh :<C-U>Unite -no-start-insert giti/branch_all<CR>
 nnoremap <silent>,gb :<C-U>Unite -no-start-insert giti/branch<CR>
 nnoremap <silent>,gd :<C-U>Gdiff<CR>
 nnoremap <silent>,gS :<C-U>Gstatus<CR>
+
+" gitcommit
+autocmd Filetype gitcommit setlocal fenc=utf-8 fencs=utf-8
