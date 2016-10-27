@@ -14,3 +14,20 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+command! RuboAutoCorrect call s:rubocop_auto_correct()
+
+function! s:rubocop_auto_correct()
+  let l:filename = @%
+  let l:rubocop_cmd = 'rubocop '
+  let l:auto_correct_opts = '-a '
+  let l:rubocop_output = system(l:rubocop_cmd.l:auto_correct_opts.' '.l:filename)
+  edit
+
+  if has('gui_macvim')
+    syntax on
+  endif
+
+  echo l:filename
+  echo l:rubocop_output
+endfunction
