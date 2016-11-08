@@ -121,3 +121,15 @@ augroup fileTypeIndent
   autocmd BufNewFile,BufRead *.cs setlocal tabstop=4 softtabstop=4 shiftwidth=4
 augroup END
 
+
+command! MarkdownPreview call s:mark_down_preview()
+
+function! s:mark_down_preview()
+  let l:filename = @%
+  let l:viewer = 'firefox'
+  let l:open_cmd = 'open -a '
+  let l:open_output = system(l:open_cmd.l:viewer.' '.l:filename)
+  edit
+
+  echo l:open_output
+endfunction
