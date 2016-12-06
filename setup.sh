@@ -3,8 +3,20 @@
 # git submodule init
 # git submodule update
 
-for file in `ls -d dot.*`
+for dot_file in `ls -d dot.*`
 do
-  echo $file
-  ln -nfsv $HOME/dotfiles/$file $HOME/${file#dot}
+  echo $dot_file
+  if [ $dot_file = "dot.config" ];then
+    if [ ! -d ${HOME}/.config ];then
+      echo ".configディレクトリを作成"
+      mkdir ${HOME}/.config;
+    fi
+    for dotconfig_file in `ls -d dot.config/*`
+    do
+      echo $dotconfig_file
+      ln -nfsv $HOME/dotfiles/$dotconfig_file $HOME/${dotconfig_file#dot}
+    done;
+  else
+    ln -nfsv $HOME/dotfiles/$dot_file $HOME/${dot_file#dot}
+  fi
 done

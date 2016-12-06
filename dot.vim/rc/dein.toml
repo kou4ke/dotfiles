@@ -19,6 +19,11 @@ repo = 'Shougo/neomru.vim'
 
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
+if   = '''! has('nvim')'''
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+if   = '''has('nvim')'''
 
 [[plugins]]
 repo = 'scrooloose/syntastic'
@@ -33,6 +38,7 @@ build = 'make'
 [[plugins]]
 repo = 'Shougo/vimshell'
 depends = 'vimproc'
+if   = '''! has('nvim')'''
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'

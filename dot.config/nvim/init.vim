@@ -1,0 +1,1 @@
+/Users/watanabe_kosuke/dotfiles/dot.vimrc
