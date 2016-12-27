@@ -132,3 +132,11 @@ function! s:mark_down_preview()
 
   echo l:open_output
 endfunction
+
+" 半角スペース2つを全角に変換する
+command! SpaceH2toZen call s:space_hankaku2_to_zenkaku()
+
+function! s:space_hankaku2_to_zenkaku()
+  execute '%s/  /　/g'
+endfunction
+
