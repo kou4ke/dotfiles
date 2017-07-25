@@ -103,6 +103,9 @@ inoremap <C-t> <Up>
 inoremap <C-v> <Down>
 inoremap <C-d> <Del>
 
+" filetype判定の追加
+autocmd BufRead,BufNewFile *.gs set filetype=javascript
+
 " vimshell
 nnoremap <silent> vp :VimShellPop<CR>
 augroup cmd_vimshell
