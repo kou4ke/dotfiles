@@ -103,6 +103,11 @@ inoremap <C-t> <Up>
 inoremap <C-v> <Down>
 inoremap <C-d> <Del>
 
+" neovim向けのterminalモードの設定
+if has('nvim')
+  tnoremap <silent> <ESC> <C-\><C-n>
+endif
+
 " filetype判定の追加
 autocmd BufRead,BufNewFile *.gs set filetype=javascript
 
