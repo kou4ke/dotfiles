@@ -51,3 +51,12 @@ repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'rking/ag.vim'
+
+[[plugins]]
+repo = 'mattn/webapi-vim'
+
+[[plugins]]
+repo = 'kana/vim-metarw'
+
+[[plugins]]
+repo = 'mattn/vim-metarw-gdrive'
