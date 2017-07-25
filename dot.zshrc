@@ -139,7 +139,7 @@ case ${OSTYPE} in
         #Mac用の設定
         export CLICOLOR=1
         alias ls='ls -G -F'
-        alias vim='nvim'
+        alias -g vim='nvim'
         alias updatedb='sudo /usr/libexec/locate.updatedb'
         ;;
     linux*)
