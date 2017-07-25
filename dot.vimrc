@@ -121,7 +121,7 @@ augroup END
 
 " tab operation
 nnoremap <silent> tn<CR> :<C-u>:tabnew<CR>
-nnoremap <silent> tc<CR> :<C-u>:tabclose<CR>
+" nnoremap <silent> tc<CR> :<C-u>:tabclose<CR>
 
 " indent settings
 augroup fileTypeIndent
