@@ -15,3 +15,7 @@
 [user]
 	name = watanabe_kosuke
 	email = kosuke.watanabe@drecom.co.jp
+[merge]
+	ff = false
+[pull]
+	ff = only
