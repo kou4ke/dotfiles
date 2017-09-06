@@ -152,6 +152,10 @@ esac
 
 # vim:set ft=zsh:
 
+if [ -e $HOME/.zshenv ];then
+    source $HOME/.zshenv
+fi
+
 if [ -e $HOME/.zshfunc ];then
     source $HOME/.zshfunc
 fi
