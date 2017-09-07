@@ -70,6 +70,9 @@ set laststatus=2
 colorscheme molokai
 let mapleader = '¥'
 
+" pyenvのパスを追加
+let g:python3_host_prog = $PYENV_ROOT . '/shims/python3'
+
 source ~/dotfiles/vimrc.search
 source ~/dotfiles/vimrc.unite
 source ~/dotfiles/vimrc.syntastic
