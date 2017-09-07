@@ -37,3 +37,10 @@ on_ft = ['cs']
 repo = 'tpope/vim-dispatch'
 on_ft = ['cs']
 
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = ['typescript']
+
+[[plugins]]
+repo = 'mhartington/nvim-typescript'
+on_ft = ['typescript']
