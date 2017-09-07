@@ -131,6 +131,7 @@ augroup fileTypeIndent
   autocmd!
   autocmd BufNewFile,BufRead *.cs setlocal tabstop=4 softtabstop=4 shiftwidth=4
 augroup END
+let g:indent_guides_enable_on_vim_startup = 1
 
 " markdown preview用
 command! MarkdownPreview call s:mark_down_preview()
