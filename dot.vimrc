@@ -152,3 +152,7 @@ function! s:space_hankaku2_to_zenkaku()
   execute '%s/  /　/g'
 endfunction
 
+" typescript
+let g:statline_syntastic = 0
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
