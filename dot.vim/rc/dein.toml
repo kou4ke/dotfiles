@@ -53,10 +53,4 @@ repo = 'tpope/vim-fugitive'
 repo = 'rking/ag.vim'
 
 [[plugins]]
-repo = 'mattn/webapi-vim'
-
-[[plugins]]
-repo = 'kana/vim-metarw'
-
-[[plugins]]
-repo = 'mattn/vim-metarw-gdrive'
+repo = 'nathanaelkane/vim-indent-guides'
