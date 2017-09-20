@@ -20,3 +20,5 @@ do
     ln -nfsv $HOME/dotfiles/$dot_file $HOME/${dot_file#dot}
   fi
 done
+
+exit 0
