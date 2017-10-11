@@ -13,9 +13,10 @@
 [core]
 	editor = vim
 [user]
-	name = watanabe_kosuke
-	email = kosuke.watanabe@drecom.co.jp
+	name = watanabe.kosuke
+	email = watanabe.kosuke@slogan.jp
 [merge]
 	ff = false
 [pull]
 	ff = only
+
