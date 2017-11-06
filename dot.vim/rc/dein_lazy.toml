@@ -2,9 +2,9 @@
 # repo = 'tpope/vim-endwise'
 # on_ft = ['ruby', 'vim', 'zsh']
 
-[[plugins]]
-repo = 'kana/vim-smartinput'
-on_ft = ['cs']
+## [[plugins]]
+## repo = 'kana/vim-smartinput'
+## on_ft = ['cs']
 
 [[plugins]]
 repo = 'tpope/vim-rails'
@@ -22,20 +22,20 @@ on_ft = ['slim']
 repo = 'tpope/vim-markdown'
 on_ft = ['markdown']
 
-[[plugins]]
-repo = 'OmniSharp/omnisharp-vim'
-on_ft = ['cs']
-build = 'xbuild server/OmniSharp.sln' # on mac and linux
+## [[plugins]]
+## repo = 'OmniSharp/omnisharp-vim'
+## on_ft = ['cs']
+## build = 'xbuild server/OmniSharp.sln' # on mac and linux
 ## on windows
 ## build = 'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"'
 
-[[plugins]]
-repo = 'OrangeT/vim-csharp'
-on_ft = ['cs']
+## [[plugins]]
+## repo = 'OrangeT/vim-csharp'
+## on_ft = ['cs']
 
-[[plugins]]
-repo = 'tpope/vim-dispatch'
-on_ft = ['cs']
+## [[plugins]]
+## repo = 'tpope/vim-dispatch'
+## on_ft = ['cs']
 
 [[plugins]]
 repo = 'leafgarland/typescript-vim'
