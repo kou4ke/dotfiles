@@ -54,8 +54,6 @@ set shiftwidth=2
 set smartindent
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
-highlight WideSpace ctermbg=blue guibg=blue
-highlight EOLSpace ctermbg=red guibg=red
 
 set nrformats-=octal
 set hidden
@@ -157,3 +155,6 @@ endfunction
 let g:statline_syntastic = 0
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
+
+highlight WideSpace ctermbg=blue guibg=blue
+highlight EOLSpace ctermbg=red guibg=red
