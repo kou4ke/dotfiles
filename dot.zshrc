@@ -49,6 +49,8 @@ zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
 # ps コマンドのプロセス名補完
 zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 
+# .ssh/configからホスト名を補完
+_cache_hosts=(`cat ~/.ssh/config | grep "^Host"|awk '{print $2}'`)
 
 ########################################
 # vcs_info
