@@ -5,9 +5,10 @@
 	b = branch
 	co = checkout
 	di = diff
-    pl = pull --no-commit --rebase
+	pl = pull --no-commit --rebase
 	dc = diff --cached
 	cl = config --list
+	sm = submodule
 [color]
 	ui = true
 [core]
