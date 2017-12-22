@@ -129,6 +129,7 @@ nnoremap <silent> tn<CR> :<C-u>:tabnew<CR>
 augroup fileTypeIndent
   autocmd!
   autocmd BufNewFile,BufRead *.cs setlocal tabstop=4 softtabstop=4 shiftwidth=4
+  autocmd BufNewFile,BufRead *.php setlocal tabstop=4 softtabstop=4 shiftwidth=4
 augroup END
 let g:indent_guides_enable_on_vim_startup = 1
 
