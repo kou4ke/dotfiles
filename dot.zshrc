@@ -51,6 +51,7 @@ zstyle ':completion:*:processes' command 'ps x -o pid,s,args'
 
 # .ssh/configからホスト名を補完
 _cache_hosts=(`cat ~/.ssh/config | grep "^Host"|awk '{print $2}'`)
+_cache_hosts+=(`cat ~/.ssh/ssh_conf.d/*/* | grep "^Host"|awk '{print $2}'`)
 
 ########################################
 # vcs_info
@@ -164,4 +165,14 @@ if [ -e $HOME/.zshfunc ];then
     source $HOME/.zshfunc
 fi
 
+# 初回シェル時のみ tmux実行
+if [ $SHLVL = 1 ]; then
+  tmux
+fi
 
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/kosuke/work/git/sf_datasync_docker/sf_datasync/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/kosuke/work/git/sf_datasync_docker/sf_datasync/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/kosuke/work/git/sf_datasync_docker/sf_datasync/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/kosuke/work/git/sf_datasync_docker/sf_datasync/node_modules/tabtab/.completions/sls.zsh
