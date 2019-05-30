@@ -149,6 +149,7 @@ case ${OSTYPE} in
 %# "
         #Linux用の設定
         alias ls='ls -F --color=auto'
+        alias -g vim='nvim'
         ;;
 esac
 
