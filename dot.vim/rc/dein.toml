@@ -33,7 +33,7 @@ repo = 'Shougo/vimfiler'
 
 [[plugins]]
 repo = 'Shougo/vimproc'
-build = 'make'
+build = 'make -f make_mac.mak'
 
 [[plugins]]
 repo = 'Shougo/vimshell'
