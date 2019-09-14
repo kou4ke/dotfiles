@@ -9,7 +9,6 @@ set wrapscan
 
 noremap <ESC><ESC> :nohlsearch<CR><ESC>
 
-
 " 検索などで飛んだらそこを真ん中に
 nmap n nzz
 nmap N Nzz
