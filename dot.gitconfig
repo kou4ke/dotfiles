@@ -2,6 +2,7 @@
 	default = current
 [alias]
 	st = status
+	f = fetch
 	b = branch
 	co = checkout
 	di = diff
