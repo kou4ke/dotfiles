@@ -143,6 +143,8 @@ case ${OSTYPE} in
         export CLICOLOR=1
         alias ls='ls -G -F'
         alias -g vim='nvim'
+        alias -g vi='open -a vimR'
+        alias -g fdr='open -a finder ./'
         alias updatedb='sudo /usr/libexec/locate.updatedb'
         ;;
     linux*)
