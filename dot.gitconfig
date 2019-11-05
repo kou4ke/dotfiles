@@ -10,6 +10,7 @@
 	dc = diff --cached
 	cl = config --list
 	sm = submodule
+	ms = checkout master
 [color]
 	ui = true
 [core]
