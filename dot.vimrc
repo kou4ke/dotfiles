@@ -66,7 +66,7 @@ set clipboard=unnamed
 set laststatus=2
 
 colorscheme molokai
-let mapleader = '¥'
+let mapleader = '\'
 
 " pyenvのパスを追加
 let g:python_host_prog = $PYENV_ROOT . '/shims/python2'
@@ -105,6 +105,11 @@ inoremap <C-t> <Up>
 inoremap <C-v> <Down>
 inoremap <C-d> <Del>
 
+" ファイルオープン関連(英字キーボードフォロー)
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :w<CR>:bd<CR>
+nnoremap <leader>qq :q<CR>
+nnoremap <leader>r :source ~/.vimrc<CR>:noh<CR>
 " neovim向けのterminalモードの設定
 if has('nvim')
   tnoremap <silent> <ESC> <C-\><C-n>
