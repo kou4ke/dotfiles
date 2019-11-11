@@ -76,6 +76,7 @@ source ~/dotfiles/vimrc.search
 source ~/dotfiles/vimrc.unite
 source ~/dotfiles/vimrc.syntastic
 source ~/dotfiles/vimrc.completion
+source ~/dotfiles/vimrc.asyncompletion
 source ~/dotfiles/vimrc.git
 source ~/dotfiles/vimrc.vimfiler
 source ~/dotfiles/vimrc.omnisharp
@@ -110,6 +111,7 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>q :w<CR>:bd<CR>
 nnoremap <leader>qq :q<CR>
 nnoremap <leader>r :source ~/.vimrc<CR>:noh<CR>
+
 " neovim向けのterminalモードの設定
 if has('nvim')
   tnoremap <silent> <ESC> <C-\><C-n>
