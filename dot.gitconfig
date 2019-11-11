@@ -4,13 +4,15 @@
 	st = status
 	f = fetch
 	b = branch
+	bs= browse
 	co = checkout
 	di = diff
 	pl = pull --no-commit --rebase
 	dc = diff --cached
 	cl = config --list
 	sm = submodule
-	ms = checkout master
+	ms = !git checkout master && git pull --no-commit --rebase
+	pr = !hub pull-request -m $1 | hub browsew
 [color]
 	ui = true
 [core]
