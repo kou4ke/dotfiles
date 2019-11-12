@@ -12,7 +12,7 @@
 	cl = config --list
 	sm = submodule
 	ms = !git checkout master && git pull --no-commit --rebase
-	pr = !hub pull-request -m $1 | hub browsew
+	pr = !hub pull-request -m $1 | hub browse
 [color]
 	ui = true
 [core]
