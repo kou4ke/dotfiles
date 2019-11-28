@@ -145,6 +145,7 @@ case ${OSTYPE} in
         alias -g vim='nvim'
         alias -g vi='open -a vimR'
         alias -g fdr='open -a finder ./'
+        alias -g hosts='sudo vim /etc/hosts'
         alias updatedb='sudo /usr/libexec/locate.updatedb'
         ;;
     linux*)
