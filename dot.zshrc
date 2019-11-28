@@ -143,6 +143,7 @@ case ${OSTYPE} in
         export CLICOLOR=1
         alias ls='ls -G -F'
         alias -g vim='nvim'
+        alias -g vif='nvim -c VimFiler'
         alias -g vi='open -a vimR'
         alias -g fdr='open -a finder ./'
         alias -g hosts='sudo vim /etc/hosts'
