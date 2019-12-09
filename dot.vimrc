@@ -121,6 +121,7 @@ endif
 
 " filetype判定の追加
 autocmd BufRead,BufNewFile *.gs set filetype=javascript
+autocmd BufRead,BufNewFile *.trigger set filetype=apex
 
 " vimshell
 nnoremap <silent> vp :VimShellPop<CR>
