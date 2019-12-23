@@ -4,7 +4,7 @@
 	st = status
 	f = fetch
 	b = branch
-	bs= browse
+	br= browse
 	co = checkout
 	di = diff
 	pl = pull --no-commit --rebase
