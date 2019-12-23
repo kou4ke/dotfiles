@@ -48,3 +48,8 @@ on_ft = ['typescript']
 [[plugins]]
 repo = 'ejholmes/vim-forcedotcom'
 on_ft = ['st']
+
+[[plugins]]
+repo = 'posva/vim-vue'
+on_ft = ['vue']
+

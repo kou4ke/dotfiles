@@ -122,6 +122,9 @@ endif
 " filetype判定の追加
 autocmd BufRead,BufNewFile *.gs set filetype=javascript
 autocmd BufRead,BufNewFile *.trigger set filetype=apex
+autocmd BufRead,BufNewFile *.vue set filetype=vue
+autocmd FileType vue syntax sync fromstart
+
 
 " vimshell
 nnoremap <silent> vp :VimShellPop<CR>
