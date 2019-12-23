@@ -75,11 +75,11 @@ let g:python3_host_prog = $PYENV_ROOT . '/shims/python3'
 source ~/dotfiles/vimrc.search
 source ~/dotfiles/vimrc.unite
 source ~/dotfiles/vimrc.syntastic
-source ~/dotfiles/vimrc.completion
+"source ~/dotfiles/vimrc.completion
 source ~/dotfiles/vimrc.asyncompletion
 source ~/dotfiles/vimrc.git
 source ~/dotfiles/vimrc.vimfiler
-source ~/dotfiles/vimrc.omnisharp
+" source ~/dotfiles/vimrc.omnisharp
 
 " main operation
 "カーソルを表示行で移動する。物理行移動は<C-n>,<C-p>
