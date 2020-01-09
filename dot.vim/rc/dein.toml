@@ -9,6 +9,7 @@ repo = 'vim-airline/vim-airline'
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
+depends = 'vimproc'
 
 [[plugins]]
 repo = 'Shougo/unite-outline'
@@ -30,6 +31,7 @@ repo = 'w0rp/ale'
 
 [[plugins]]
 repo = 'Shougo/vimfiler'
+depends = 'vimproc'
 
 [[plugins]]
 repo = 'Shougo/vimproc'
