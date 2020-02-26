@@ -23,10 +23,6 @@ repo = 'Shougo/neocomplete.vim'
 if   = '''! has('nvim')'''
 
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-if   = '''has('nvim')'''
-
-[[plugins]]
 repo = 'w0rp/ale'
 
 [[plugins]]
