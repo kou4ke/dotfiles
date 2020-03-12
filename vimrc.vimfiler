@@ -7,5 +7,6 @@ augroup cmd_vimfiler
   autocmd!
   autocmd Filetype vimfiler nmap <silent><buffer>Q <Plug>(vimfiler_exit)
   autocmd Filetype vimfiler nmap <silent><buffer>q <Plug>(vimfiler_hide)
+  autocmd Filetype vimfiler nmap <silent><buffer><leader>q <Plug>(vimfiler_hide)
 augroup END
 
