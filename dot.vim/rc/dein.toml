@@ -61,3 +61,6 @@ repo = 'prabirshrestha/vim-lsp'
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim.git'
