@@ -12,6 +12,10 @@ repo = 'Shougo/unite.vim'
 depends = 'vimproc'
 
 [[plugins]]
+repo = 'Shougo/denite.nvim'
+depends = ['neomru.vim']
+
+[[plugins]]
 repo = 'Shougo/unite-outline'
 depends = 'unite'
 
