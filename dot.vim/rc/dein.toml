@@ -45,6 +45,9 @@ repo = 'roxma/vim-hug-neovim-rpc'
 if   = '''! has('nvim')'''
 
 [[plugins]]
+repo = 'Shougo/deol.nvim'
+
+[[plugins]]
 repo = 'Shougo/vimproc'
 build = 'make -f make_mac.mak'
 
