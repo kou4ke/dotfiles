@@ -1,5 +1,5 @@
-nnoremap <silent>,fe :<C-U>Defx -split=vertical -winwidth=40 -search=`expand('%:p')` -direction=topleft `expand('%:p:h')`<CR>
-nnoremap <silent>,ff :<C-U>Defx -resume<CR>
+nnoremap <silent>,fe :<C-U>Defx -split=vertical -winwidth=40  -show-ignored-files -search=`expand('%:p')` -direction=topleft `expand('%:p:h')`<CR>
+nnoremap <silent>,ff :<C-U>Defx -resume -show-ignored-files<CR>
 " defx Config: start -----------------
 
 autocmd FileType defx call s:defx_my_settings()
