@@ -17,7 +17,7 @@ depends = ['neomru.vim']
 
 [[plugins]]
 repo = 'Shougo/unite-outline'
-depends = 'unite'
+depends = ['unite.vim']
 
 [[plugins]]
 repo = 'Shougo/neomru.vim'
