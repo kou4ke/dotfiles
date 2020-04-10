@@ -1,0 +1,52 @@
+" Unite
+let g:unite_enable_start_insert = 1
+" Unite bookmarkのディレクトリ指定の場合、vimfiler経由で呼び出し
+call unite#custom_default_action('source/bookmark/directory' , 'vimfiler')
+
+call denite#custom#source('file/rec', 'matchers', ['matcher_fuzzy'])
+call denite#custom#var('file/rec', 'command', ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
+call denite#custom#var('grep', {
+  \ 'command': ['ag'],
+  \ 'recursive_opts': [],
+  \ 'pattern_opt': [],
+  \ 'default_opts': [
+  \   '--follow', '--no-group', '--no-color'
+  \ ],
+  \ })
+
+nnoremap <silent> <C-f> :<C-u>DeniteBufferDir buffer -buffer-name=files file/rec<CR>
+"inoremap <sile:Denite file_recnt> <C-f> <ESC>:<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
+nnoremap <silent> <C-b> :<C-u>Denite buffer file_mru<CR>
+"inoremap <silent> <C-b> <ESC>:<C-u>Unite buffer file_mru<CR>
+
+"nnoremap <silent> ,uf :<C-u>Unite file<CR>
+"nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
+"nnoremap <silent> ,uo :<C-u>Unite outline<CR>
+"nnoremap <silent> ,uh :<C-u>Unite help<CR>
+"nnoremap <silent> ,up :<C-u>Unite file_rec/async:!<CR>
+"nnoremap <silent> ,ub :<C-u>Unite bookmark<CR>
+
+" grep検索
+nnoremap <silent> ,ug  :<C-u>Denite grep -buffer-name=search-buffer<CR>
+" カーソル位置の単語をgrep検索
+nnoremap <silent> ,uG :<C-u>:DeniteCursorWord grep -buffer-name=search-buffer<CR>
+" grep検索結果の再呼出
+nnoremap <silent> ,ur  :<C-u>Denite -resume -buffer-name=search-buffer<CR>
+
+" Define mappings
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> d
+  \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+  \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <Space>
+  \ denite#do_map('toggle_select').'j'
+endfunction
+
