@@ -73,12 +73,13 @@ let g:python_host_prog = $PYENV_ROOT . '/shims/python2'
 let g:python3_host_prog = $PYENV_ROOT . '/shims/python3'
 
 source ~/dotfiles/vimrc.search
-source ~/dotfiles/vimrc.unite
+"source ~/dotfiles/vimrc.unite
+source ~/dotfiles/vimrc.denite
 source ~/dotfiles/vimrc.syntastic
 "source ~/dotfiles/vimrc.completion
 source ~/dotfiles/vimrc.asyncompletion
 source ~/dotfiles/vimrc.git
-source ~/dotfiles/vimrc.vimfiler
+source ~/dotfiles/vimrc.defx
 " source ~/dotfiles/vimrc.omnisharp
 
 " main operation
