@@ -19,10 +19,10 @@ nnoremap <silent> [denite]f :<C-u>DeniteBufferDir buffer -buffer-name=files file
 "最近利用したファイル
 nnoremap <silent> <C-b> :<C-u>Denite buffer file_mru<CR>
 nnoremap <silent> [denite]b :<C-u>Denite buffer file_mru<CR>
-"ブックマーク一覧
-nnoremap <silent> [denite]c :<C-u>Denite -direction=topleft -buffer-name=bookmark-buffer bookmark<CR>
+"ブックマーク一覧(dirmarkのlist表示)
+nnoremap <silent> [denite]l :<C-u>Denite -direction=topleft -buffer-name=bookmark-buffer -default-action=cd dirmark<CR>
 "ブックマークに追加
-nnoremap <silent> [denite]a :<C-u>DeniteBookmarkAdd<CR>
+nnoremap <silent> [denite]a :<C-u>Denite dirmark/add::"' . expand('%:p:h') . '"<CR>
 
 " grep検索
 nnoremap <silent> [denite]/  :<C-u>Denite grep -buffer-name=search-buffer<CR>
