@@ -86,3 +86,6 @@ repo = 'prabirshrestha/asyncomplete.vim'
 
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim.git'
+
+[[plugins]]
+repo = 'ntpeters/vim-better-whitespace'

@@ -168,10 +168,11 @@ function! s:space_hankaku2_to_zenkaku()
   execute '%s/  /　/g'
 endfunction
 
+" better white space
+let g:strip_whitespace_on_save=0
+let g:better_whitespace_filetypes_blacklist=['defx', 'denite']
+
 " typescript
 let g:statline_syntastic = 0
 autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
-
-highlight WideSpace ctermbg=blue guibg=blue
-highlight EOLSpace ctermbg=red guibg=red
+autocmd QuickFixCmdPost    l* nested lwindo
