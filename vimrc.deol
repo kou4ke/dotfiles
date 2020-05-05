@@ -2,4 +2,5 @@ let g:deol#shell_history_path = '~/.zsh_history'
 nnoremap <silent> ,tf :Deol -split=floating<CR>
 nnoremap <silent> ,tv :Deol -split=vertical<CR>
 nnoremap <silent> ,ts :Deol -split=horizontal<CR>
+tnoremap <silent> ,tq <C-\><C-n>:q<CR>
 " nmap  bg (deol_bg)
