@@ -113,7 +113,8 @@ nnoremap <leader>n :enew<CR>
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :w<CR>:bd<CR>
 nnoremap <leader>qq :q<CR>
-nnoremap <leader>wqq :w<CR>:q<CR>
+nnoremap <leader>cc :w<CR>:q<CR>
+nnoremap <leader>ee :q!<CR>
 nnoremap <leader>r :source ~/.vimrc<CR>:noh<CR>
 
 " neovim向けのterminalモードの設定
