@@ -126,6 +126,8 @@ alias mv='mv -i'
 alias grep="grep --color"
 
 alias g="hub"
+alias tf="terraform"
+alias tfi="terraforming"
 
 alias mkdir='mkdir -p'
 
