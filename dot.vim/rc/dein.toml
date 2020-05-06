@@ -49,7 +49,7 @@ repo = 'Shougo/deol.nvim'
 
 [[plugins]]
 repo = 'kmnk/denite-dirmark'
-depends = ['unite.vim']
+depends = ['denite.nvim']
 
 [[plugins]]
 repo = 'Shougo/vimproc'
