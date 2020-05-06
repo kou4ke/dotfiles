@@ -64,12 +64,6 @@ if   = '''! has('nvim')'''
 repo = 'thinca/vim-quickrun'
 
 [[plugins]]
-repo = 'kmnk/vim-unite-giti'
-
-[[plugins]]
-repo = 'tpope/vim-fugitive'
-
-[[plugins]]
 repo = 'rking/ag.vim'
 
 [[plugins]]

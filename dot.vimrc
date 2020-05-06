@@ -79,7 +79,7 @@ source ~/dotfiles/vimrc.deol
 source ~/dotfiles/vimrc.syntastic
 "source ~/dotfiles/vimrc.completion
 source ~/dotfiles/vimrc.asyncompletion
-source ~/dotfiles/vimrc.git
+" source ~/dotfiles/vimrc.git
 source ~/dotfiles/vimrc.defx
 " source ~/dotfiles/vimrc.omnisharp
 
