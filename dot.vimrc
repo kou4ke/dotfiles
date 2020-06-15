@@ -1,5 +1,5 @@
 " -------------------------------------------------
-" dein関連 
+" dein関連
 " http://qiita.com/delphinus35/items/00ff2c0ba972c6e41542#_reference-b5863a53d77df63b23d4
 " -------------------------------------------------
 
@@ -171,6 +171,7 @@ endfunction
 " better white space
 let g:strip_whitespace_on_save=0
 let g:better_whitespace_filetypes_blacklist=['defx', 'denite']
+nnoremap <leader>si :StripWhitespace<CR>
 
 " typescript
 let g:statline_syntastic = 0
