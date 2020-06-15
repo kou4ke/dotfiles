@@ -8,16 +8,8 @@ repo = 'tomasr/molokai'
 repo = 'vim-airline/vim-airline'
 
 [[plugins]]
-repo = 'Shougo/unite.vim'
-depends = 'vimproc'
-
-[[plugins]]
 repo = 'Shougo/denite.nvim'
 depends = ['neomru.vim']
-
-[[plugins]]
-repo = 'Shougo/unite-outline'
-depends = ['unite.vim']
 
 [[plugins]]
 repo = 'Shougo/neomru.vim'
