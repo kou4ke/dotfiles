@@ -145,8 +145,8 @@ case ${OSTYPE} in
         export CLICOLOR=1
         alias ls='ls -G -F'
         alias -g vim='nvim'
-        alias -g vif='nvim -c "Defx -show-ignored-files"'
-        alias -g vi='open -a vimR'
+        alias -g vif='nvim -c "Defx -show-ignored-files -buffer-name=defx"'
+        alias -g vir='open -a vimR'
         alias -g fdr='open -a finder ./'
         alias -g vihosts='sudo vim /etc/hosts'
         alias updatedb='sudo /usr/libexec/locate.updatedb'
