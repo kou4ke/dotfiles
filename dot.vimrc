@@ -115,7 +115,8 @@ nnoremap <leader>q :w<CR>:bd<CR>
 nnoremap <leader>ss :w<CR>:bd<CR>
 nnoremap <leader>qq :q<CR>
 nnoremap <leader>cc :w<CR>:q<CR>
-nnoremap <leader>je :q!<CR>
+nnoremap <leader><ESC> :bd!<CR>
+nnoremap <leader><ESC><ESC> :q!<CR>
 nnoremap <leader>l :source ~/.vimrc<CR>:noh<CR>
 nnoremap <leader>r :reg<CR>
 
