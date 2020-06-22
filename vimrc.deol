@@ -3,4 +3,5 @@ nnoremap <silent> ,tf :Deol -split=floating<CR>
 nnoremap <silent> ,tv :Deol -split=vertical<CR>
 nnoremap <silent> ,ts :Deol -split=horizontal<CR>
 tnoremap <silent> ,tq <C-\><C-n>:q<CR>
+tnoremap <silent> <C-w><C-w> <C-\><C-n><C-w>w
 " nmap  bg (deol_bg)
