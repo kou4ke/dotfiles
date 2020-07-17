@@ -164,7 +164,7 @@ esac
 
 # vim:set ft=zsh:
 
-if [ -e $HOME/.zshmyenv ];then
+if [ -e $HOME/.zsh_settings ];then
     source $HOME/.zsh_settings
 fi
 
