@@ -66,6 +66,9 @@ set clipboard=unnamed
 set laststatus=2
 
 colorscheme molokai
+highlight Comment ctermfg=243
+highlight Visual  ctermbg=239
+
 let mapleader = '\'
 
 " pyenvのパスを追加
