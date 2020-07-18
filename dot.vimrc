@@ -80,8 +80,8 @@ source ~/dotfiles/vimrc.search
 source ~/dotfiles/vimrc.denite
 source ~/dotfiles/vimrc.deol
 source ~/dotfiles/vimrc.syntastic
-"source ~/dotfiles/vimrc.completion
-source ~/dotfiles/vimrc.asyncompletion
+source ~/dotfiles/vimrc.template
+source ~/dotfiles/vimrc.vimlsp
 " source ~/dotfiles/vimrc.git
 source ~/dotfiles/vimrc.defx
 " source ~/dotfiles/vimrc.omnisharp
