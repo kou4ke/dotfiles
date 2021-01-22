@@ -1,6 +1,6 @@
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-" inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
+inoremap <expr> <cr>    pumvisible() ? "\<C-y>" : "\<cr>"
 
 " vim-lsp servers
 " https://github.com/prabirshrestha/vim-lsp.wiki.git
@@ -21,7 +21,6 @@ function! s:on_lsp_buffer_enabled() abort
   nmap <buffer> [g <Plug>(lsp-previous-diagnostic)
   nmap <buffer> ]g <Plug>(lsp-next-diagnostic)
   nmap <buffer> K <plug>(lsp-hover)
-  inoremap <expr> <cr> pumvisible() ? "\<c-y>\<cr>" : "\<cr>"
 endfunction
 
 augroup lsp_install
