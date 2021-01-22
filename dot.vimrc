@@ -72,8 +72,8 @@ highlight Visual  ctermbg=239
 let mapleader = '\'
 
 " pyenvのパスを追加
-let g:python_host_prog = $PYENV_ROOT . '/shims/python2'
-let g:python3_host_prog = $PYENV_ROOT . '/shims/python3'
+let g:python_host_prog = $HOME . '/.anyenv/envs/pyenv/shims/python2'
+let g:python3_host_prog = $HOME . '/.anyenv/envs/pyenv/shims/python3'
 
 source ~/dotfiles/vimrc.search
 "source ~/dotfiles/vimrc.unite
