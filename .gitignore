@@ -1,3 +1,4 @@
 /dot.vim/dein/
 /dot.vim/cache/
 *.swp
+/dot.vim/sonictemplate/text/
