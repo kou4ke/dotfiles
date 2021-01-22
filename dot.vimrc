@@ -134,6 +134,15 @@ autocmd BufRead,BufNewFile *.trigger set filetype=apex
 autocmd BufRead,BufNewFile *.vue set filetype=vue
 autocmd FileType vue syntax sync fromstart
 
+" tmuxでもset paste modo
+if &term =~ "xterm" || &term =~ "screen"
+  noremap <special> <expr> <Esc>[200~ XTermPasteBegin("0i")
+  inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
+  vnoremap <special> <expr> <Esc>[200~ XTermPasteBegin("c")
+  cnoremap <special> <Esc>[200~ <nop>
+  cnoremap <special> <Esc>[201~ <nop>
+endif
+
 
 " vimshell
 nnoremap <silent> vp :VimShellPop<CR>
