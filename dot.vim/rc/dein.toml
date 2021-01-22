@@ -82,3 +82,9 @@ repo = 'editorconfig/editorconfig-vim.git'
 
 [[plugins]]
 repo = 'ntpeters/vim-better-whitespace'
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+
+[[plugins]]
+repo = 'ConradIrwin/vim-bracketed-paste'
