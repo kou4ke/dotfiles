@@ -1,3 +1,6 @@
+nnoremap [ale] <Nop>
+nmap ,a [ale]
+
 let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
@@ -9,16 +12,26 @@ let g:ale_set_quickfix = 1
 let g:ale_linters = {
 \  'javascript': ['eslint'],
 \  'json': ['jq', 'jsonlint'],
+\  'yaml': ['language-server'],
 \  'ruby': ['rubocop'],
-\  'sh': ['language_server'],
+\  'sh': ['language-server'],
 \  'ansible': ['ansible-lint'],
 \}
 let g:ale_fixers = {
 \  'javascript': ['eslint'],
 \  'ruby': ['rubocop'],
+\  'yaml': ['prettier', 'trim_whitespace' ],
+\  'sh': ['shfmt', 'trim_whitespace' ],
 \}
 let g:ale_fix_on_save = 0
-let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 0
+
+" terraform
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
+
+nnoremap <silent> [ale]f :<C-u>ALEFix<CR>
+nnoremap <silent> [ale]l :<C-u>ALELint<CR>
 
 command! RuboAutoCorrect call s:rubocop_auto_correct()
 
