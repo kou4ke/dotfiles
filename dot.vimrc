@@ -183,6 +183,12 @@ function! s:space_hankaku2_to_zenkaku()
   execute '%s/  /　/g'
 endfunction
 
+" コメントの設定
+if !exists('g:tcomment_types')
+  let g:tcomment_types = {}
+endif
+let g:tcomment_types['tf'] = '# %s'
+
 " better white space
 let g:strip_whitespace_on_save=0
 let g:better_whitespace_filetypes_blacklist=['defx', 'denite']

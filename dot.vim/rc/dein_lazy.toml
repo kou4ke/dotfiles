@@ -53,3 +53,6 @@ on_ft = ['st']
 repo = 'posva/vim-vue'
 on_ft = ['vue']
 
+[[plugins]]
+repo = 'hashivim/vim-terraform'
+on_ft = ['terraform']
