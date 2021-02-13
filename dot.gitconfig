@@ -16,6 +16,7 @@
 	sm = submodule
 	ms = !git checkout master && git pull --no-commit --rebase
 	rq = !hub pull-request -d -m "$1"
+	is = !hub issue create -m "$1"
 [color]
 	ui = true
 [core]
