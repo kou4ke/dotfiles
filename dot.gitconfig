@@ -11,6 +11,8 @@
 	pl = pull --no-commit --rebase
 	dc = diff --cached
 	cl = config --list
+	sw = switch
+	re = restore
 	sm = submodule
 	ms = !git checkout master && git pull --no-commit --rebase
 	rq = !hub pull-request -d -m "$1"
