@@ -14,7 +14,7 @@
 	sw = switch
 	re = restore
 	sm = submodule
-	ms = !git checkout master && git pull --no-commit --rebase
+	ms = !(git checkout master || git checkout main ) && git pull --no-commit --rebase
 	rq = !hub pull-request -d -m "$1"
 	is = !hub issue create -m "$1"
 	clean-branch = !git branch --merged | egrep -v '\\*|master|main|development|dev|release' | xargs git branch -d
