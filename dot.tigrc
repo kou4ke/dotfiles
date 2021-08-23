@@ -3,3 +3,5 @@ set main-view = id date author commit-title:graph=yes,refs=yes
 
 bind main    R !git rebase -i %(commit)
 bind diff    R !git rebase -i %(commit)
+
+bind status  A !git commit --amend
