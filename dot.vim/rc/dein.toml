@@ -89,3 +89,6 @@ repo = 'tomtom/tcomment_vim'
 
 [[plugins]]
 repo = 'ConradIrwin/vim-bracketed-paste'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
