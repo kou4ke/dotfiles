@@ -44,7 +44,13 @@ filetype plugin indent on
 set enc=utf-8
 set fenc=utf-8
 set fencs=utf-8,iso-2022-jp,euc-jp,cp932,sjis
-set nobackup
+" set nobackup
+set backup
+set backupdir=~/tmp/.vim/backup
+set backupext=.back
+set swapfile
+set directory=~/tmp/.vim/swap
+set updatecount=50
 set number
 set title
 set ambiwidth=double
