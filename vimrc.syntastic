@@ -12,6 +12,7 @@ let g:ale_set_quickfix = 1
 let g:ale_linters = {
 \  'javascript': ['eslint'],
 \  'json': ['jq', 'jsonlint'],
+\  'html': ['HTMLHint'],
 \  'yaml': ['language-server'],
 \  'ruby': ['rubocop'],
 \  'sh': ['language-server'],
@@ -22,6 +23,7 @@ let g:ale_fixers = {
 \  'ruby': ['rubocop'],
 \  'yaml': ['prettier', 'trim_whitespace' ],
 \  'sh': ['shfmt', 'trim_whitespace' ],
+\  'terraform': ['terraform', 'remove_trailing_lines', 'trim_whitespace' ],
 \}
 let g:ale_fix_on_save = 0
 let g:ale_completion_enabled = 0

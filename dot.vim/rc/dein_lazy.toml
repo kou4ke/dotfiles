@@ -47,7 +47,7 @@ on_ft = ['typescript']
 
 [[plugins]]
 repo = 'ejholmes/vim-forcedotcom'
-on_ft = ['st']
+on_ft = ['st', 'apex']
 
 [[plugins]]
 repo = 'posva/vim-vue'
@@ -55,4 +55,4 @@ on_ft = ['vue']
 
 [[plugins]]
 repo = 'hashivim/vim-terraform'
-on_ft = ['terraform']
+on_ft = ['terraform', 'tf']
