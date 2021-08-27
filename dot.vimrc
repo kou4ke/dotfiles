@@ -83,15 +83,12 @@ let g:python_host_prog = $HOME . '/.anyenv/envs/pyenv/shims/python2'
 let g:python3_host_prog = $HOME . '/.anyenv/envs/pyenv/shims/python3'
 
 source ~/dotfiles/vimrc.search
-"source ~/dotfiles/vimrc.unite
 source ~/dotfiles/vimrc.denite
 source ~/dotfiles/vimrc.deol
 source ~/dotfiles/vimrc.syntastic
 source ~/dotfiles/vimrc.template
 source ~/dotfiles/vimrc.vimlsp
-" source ~/dotfiles/vimrc.git
 source ~/dotfiles/vimrc.defx
-" source ~/dotfiles/vimrc.omnisharp
 
 " main operation
 "カーソルを表示行で移動する。物理行移動は<C-n>,<C-p>
