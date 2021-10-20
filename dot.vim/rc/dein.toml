@@ -19,7 +19,7 @@ repo = 'Shougo/neocomplete.vim'
 if   = '''! has('nvim')'''
 
 [[plugins]]
-repo = 'w0rp/ale'
+repo = 'dense-analysis/ale'
 
 [[plugins]]
 repo = 'Shougo/vimfiler'
