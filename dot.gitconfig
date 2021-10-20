@@ -24,8 +24,8 @@
 	editor = vim
 	excludesfile = /Users/kosuke/.gitignore_global
 [user]
-	name = watanabe.kosuke
-	email = watanabe.kosuke@slogan.jp
+	name = Kosuke Watanabe
+	email = kousuke6122@gmail.com
 [merge]
 	ff = false
 [pull]
@@ -44,3 +44,8 @@
 	prune = true
 [init]
 	templatedir = ~/.git_template
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
