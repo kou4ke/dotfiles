@@ -36,4 +36,4 @@ on_ft = ['terraform', 'tf']
 
 [[plugins]]
 repo = 'mechatroner/rainbow_csv'
-on_ft = ['text']
+on_ft = ['text', 'csv', 'tsv']
