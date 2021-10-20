@@ -1,6 +1,8 @@
 # main-viewの左端にコミットIDを表示する
 set main-view = id date author commit-title:graph=yes,refs=yes
 
+color cursor  black  green
+
 bind main    R !git rebase -i %(commit)
 bind diff    R !git rebase -i %(commit)
 
