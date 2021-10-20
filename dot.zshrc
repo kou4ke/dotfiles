@@ -174,7 +174,7 @@ fi
 
 # 初回シェル時のみ tmux実行
 if [ $SHLVL = 1 ]; then
-  tmux attach
+  tmux attach || tmux
 fi
 
 # tabtab source for serverless package
