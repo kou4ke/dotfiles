@@ -92,3 +92,9 @@ repo = 'ConradIrwin/vim-bracketed-paste'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'kristijanhusak/defx-git'
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
