@@ -195,6 +195,7 @@ if !exists('g:tcomment_types')
   let g:tcomment_types = {}
 endif
 let g:tcomment_types['tf'] = '# %s'
+let g:tcomment_types['toml'] = '# %s'
 
 " better white space
 let g:strip_whitespace_on_save=0
