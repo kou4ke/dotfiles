@@ -7,6 +7,7 @@
 let s:dein_dir = expand('~/.vim/cache/dein')
 " dein.vim 本体
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+let g:dein#auto_recache = 1
 
 " dein.vim がなければ github から落としてくる
 if &runtimepath !~# '/dein.vim'
