@@ -1,0 +1,10 @@
+    -
+      cn: ""
+      sn: ""
+      givenName: ""
+      displayName: ""
+      gidNumber: 1001
+      mail: "@slogan.jp"
+      employeeNumber: 
+      employeeType: "正社員"
+      loginShell: "/bin/fales"
