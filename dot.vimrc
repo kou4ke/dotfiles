@@ -136,6 +136,9 @@ endif
 autocmd BufRead,BufNewFile *.gs set filetype=javascript
 autocmd BufRead,BufNewFile *.trigger set filetype=apex
 autocmd BufRead,BufNewFile *.vue set filetype=vue
+autocmd BufRead,BufNewFile *.toml set filetype=toml
+autocmd BufRead,BufNewFile *.csv set filetype=csv
+autocmd BufRead,BufNewFile *.tsv set filetype=tsv
 autocmd FileType vue syntax sync fromstart
 
 " tmuxでもset paste modo
