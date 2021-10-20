@@ -72,6 +72,7 @@ set wildmenu
 set clipboard=unnamed
 set laststatus=2
 set termguicolors
+set tags=.tags;$HOME
 
 colorscheme molokai
 highlight Comment ctermfg=243
