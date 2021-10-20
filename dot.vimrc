@@ -91,6 +91,7 @@ source ~/dotfiles/vimrc.syntastic
 source ~/dotfiles/vimrc.template
 source ~/dotfiles/vimrc.vimlsp
 source ~/dotfiles/vimrc.defx
+source ~/dotfiles/vimrc.fzf
 
 " main operation
 "カーソルを表示行で移動する。物理行移動は<C-n>,<C-p>
