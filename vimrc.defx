@@ -1,5 +1,33 @@
-nnoremap <silent>,fe :<C-U>Defx -split=vertical -winwidth=40  -show-ignored-files -resume -search=`expand('%:p')` -direction=topleft `expand('%:p:h')`<CR>
-nnoremap <silent>,ff :<C-U>Defx -resume -show-ignored-files<CR>
+
+
+call defx#custom#option('explorer', {
+    \ 'winwidth': 45,
+    \ 'ignored_files': '.*,target*',
+    \ 'direction': 'topleft',
+    \ 'toggle': 1,
+    \ 'columns': 'indent:git:icons:filename:mark',
+    \ })
+
+call defx#custom#column('git', 'indicators', {
+    \ 'Modified'  : '✹',
+    \ 'Staged'    : '✚',
+    \ 'Untracked' : '✭',
+    \ 'Renamed'   : '➜',
+    \ 'Unmerged'  : '═',
+    \ 'Ignored'   : '☒',
+    \ 'Deleted'   : '✖',
+    \ 'Unknown'   : '?'
+    \ })
+
+call defx#custom#option('_', {
+    \ 'columns': 'indent:git:icons:filename',
+    \ 'show_ignored_files': 1,
+    \ })
+
+nnoremap <silent>,fe :<C-U>Defx -split=vertical -show-ignored-files -resume -buffer_name=explorer -search=`expand('%:p')` `expand('%:p:h')`<CR>
+"nnoremap <silent>,fe :<C-U>Defx -split=vertical -winwidth=40  -show-ignored-files -resume -search=`expand('%:p')` -direction=topleft `expand('%:p:h')`<CR>
+nnoremap <silent>,ff :<C-U>Defx -split=vertical -resume -buffer_name=explorer -show-ignored-files -buffer_name=explorer<CR>
+
 " defx Config: start -----------------
 
 autocmd FileType defx call s:defx_my_settings()
@@ -9,7 +37,7 @@ autocmd FileType defx call s:defx_my_settings()
       nnoremap <silent><buffer><expr> <CR>
       \ defx#is_directory() ?
       \  defx#do_action('open_directory') :
-      \  defx#do_action('multi', ['drop', 'quit'])
+      \  defx#do_action('multi', ['drop', 'vsplit'])
       nnoremap <silent><buffer><expr> c  defx#do_action('copy')
       nnoremap <silent><buffer><expr> m  defx#do_action('move')
       nnoremap <silent><buffer><expr> p  defx#do_action('paste')
@@ -34,6 +62,7 @@ autocmd FileType defx call s:defx_my_settings()
       nnoremap <silent><buffer><expr> k  line('.') == 1 ? 'G' : 'k'
       nnoremap <silent><buffer><expr> <C-l>  defx#do_action('redraw')
       nnoremap <silent><buffer><expr> <C-g>  defx#do_action('print')
+      nnoremap <silent><buffer><expr> pp  defx#do_action('multi', ['preview'])
       nnoremap <silent><buffer><expr> cd  defx#do_action('change_vim_cwd')
     endfunction
 
