@@ -169,8 +169,15 @@ augroup cmd_vimshell
 augroup END
 
 " tab operation
-nnoremap <silent> tn<CR> :<C-u>:tabnew<CR>
-" nnoremap <silent> tc<CR> :<C-u>:tabclose<CR>
+nnoremap [tab] <Nop>
+nmap <leader>t [tab]
+
+nnoremap [tab]n :<C-u>:tabnew<CR>
+nnoremap [tab]l :<C-u>:tabnext<CR>
+nnoremap [tab]h :<C-u>:tabprevious<CR>
+nnoremap [tab]L :<C-u>:tablast<CR>
+nnoremap [tab]H :<C-u>:tabfirst<CR>
+
 
 " indent settings
 augroup fileTypeIndent
