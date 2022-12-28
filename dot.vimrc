@@ -86,6 +86,10 @@ let mapleader = '\'
 let g:python_host_prog = $HOME . '/.anyenv/envs/pyenv/shims/python2'
 let g:python3_host_prog = $HOME . '/.anyenv/envs/pyenv/shims/python3'
 
+" nodeのパスを追加
+let g:node_host_prog = $HOME . '/.anyenv/envs/nodenv/versions/16.7.0/bin/neovim-node-host'
+let $NVIM_NODE_LOG_FILE = $HOME . '/.vim/nvim-node.log'
+
 source ~/dotfiles/vimrc.search
 source ~/dotfiles/vimrc.denite
 source ~/dotfiles/vimrc.deol
