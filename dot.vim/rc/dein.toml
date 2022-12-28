@@ -56,9 +56,6 @@ if   = '''! has('nvim')'''
 repo = 'thinca/vim-quickrun'
 
 [[plugins]]
-repo = 'rking/ag.vim'
-
-[[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
 
 [[plugins]]
