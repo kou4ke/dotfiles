@@ -146,9 +146,9 @@ case ${OSTYPE} in
         alias ls='ls -G -F'
         alias -g vim='nvim'
         alias -g vif='nvim -c "Defx -show-ignored-files -buffer-name=defx"'
-        alias -g vir='open -a vimR'
+        alias -g vr='open -a vimR'
         alias -g fdr='open -a finder ./'
-        alias -g vihosts='sudo vim /etc/hosts'
+        alias -g vh='sudo nvim /etc/hosts'
         alias updatedb='sudo /usr/libexec/locate.updatedb'
         ;;
     linux*)
@@ -157,7 +157,6 @@ case ${OSTYPE} in
         #Linux用の設定
         alias ls='ls -F --color=auto'
         alias -g vim='nvim'
-        alias -g vimr='open -a VimR'
         export GIT_EDITOR='nvim'
         ;;
 esac
