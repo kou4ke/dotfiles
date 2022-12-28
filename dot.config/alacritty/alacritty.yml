@@ -14,6 +14,8 @@ selection:
 mouse_bindings:
   - { mouse: Right, action: PasteSelection }
 #  - { mouse: Middle, mode: ~Vi, action: PasteSelection  }
+key_bindings:
+  - { key: F,        mods: Control|Command, action: ToggleFullscreen }
 shell:
   program: /bin/zsh
   args:
@@ -45,5 +47,5 @@ window:
   decorations: full         # ボーダーとタイトルバーを表示する
   # startup_mode: Fullscreen  # フルスクリーンで起動する
 opacity: 0.80
-background_opacity: 0.80    # 背景を透過させる
+window.opacity: 0.80    # 背景を透過させる
 
