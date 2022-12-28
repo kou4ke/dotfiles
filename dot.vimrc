@@ -187,6 +187,20 @@ augroup fileTypeIndent
 augroup END
 let g:indent_guides_enable_on_vim_startup = 1
 
+"Daily Memo"
+nnoremap <Leader>m :<C-u>call EditDailyMemo()<CR>
+
+function! EditDailyMemo()
+  let l:daily_memo_dir = '~/tmp'
+  if isdirectory($DAILY_MEMO_DIR)
+    let l:daily_memo_dir = $DAILY_MEMO_DIR
+  endif
+  let l:memo_dir = l:daily_memo_dir.'/'.strftime('%Y/%m')
+  let l:memo_file = l:memo_dir.'/'.strftime('%d').'.txt'
+  call mkdir(l:memo_dir, 'p')
+  execute "e ".l:memo_file
+endfunction
+
 " markdown preview用
 command! MarkdownPreview call s:mark_down_preview()
 
