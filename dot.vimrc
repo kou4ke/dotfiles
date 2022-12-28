@@ -54,6 +54,8 @@ set directory=~/tmp/.vim/swap
 set updatecount=50
 set number
 set title
+set cursorline     " カーソル行の背景色を変える
+set cursorcolumn   " カーソル位置のカラムの背景色を変える
 set ambiwidth=double
 set expandtab
 set tabstop=2
