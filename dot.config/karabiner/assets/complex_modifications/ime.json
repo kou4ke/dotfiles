@@ -1,0 +1,60 @@
+{
+  "title": "toggle ime",
+  "rules": [
+    {
+      "description": "toggle ime mode on ctrl+[ ",
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                { "language": "ja" }
+              ]
+            }
+          ],
+          "type": "basic",
+          "from": {
+            "key_code": "open_bracket",
+            "modifiers": {
+              "mandatory": [ "control" ]
+            }
+          },
+          "to": [
+            {
+              "select_input_source": {
+                  "input_source_id": "^com\\.google\\.inputmethod\\.Japanese\\.Roman$",
+                  "language": "en"
+              }
+            }
+          ]
+        },
+        {
+          "conditions": [
+            {
+              "type": "input_source_if",
+              "input_sources": [
+                { "language": "en" }
+              ]
+            }
+          ],
+          "type": "basic",
+          "from": {
+            "key_code": "open_bracket",
+            "modifiers": {
+              "mandatory": [ "control" ]
+            }
+          },
+          "to": [
+            {
+              "select_input_source": {
+                  "input_source_id": "^com\\.google\\.inputmethod\\.Japanese\\.base$",
+                  "language": "en"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
