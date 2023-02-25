@@ -12,8 +12,10 @@ selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
   save_to_clipboard: true
 mouse_bindings:
-  - { mouse: Right, action: PasteSelection }
-#  - { mouse: Middle, mode: ~Vi, action: PasteSelection  }
+  - { mouse: Left, mods: shift, action: Copy }
+  - { mouse: Right, mods: shift, action: Paste }
+  # - { mouse: Right, action: PasteSelection }
+  # - { mouse: Middle, mode: ~Vi, action: PasteSelection  }
 key_bindings:
   - { key: F,        mods: Control|Command, action: ToggleFullscreen }
 shell:
