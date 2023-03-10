@@ -1,0 +1,146 @@
+echo "include zsh functions"
+
+function clean_docker_container() {
+  docker ps -a |grep $1|awk -F' ' '{print $1}'|xargs docker rm
+}
+
+function d() {
+  case "$1";in
+    "s")
+      open -a Docker
+      ;;
+    "p")
+      docker ps
+      ;;
+    "pa")
+      docker ps -a
+      ;;
+    "i")
+      docker images
+      ;;
+    "a")
+      docker attach
+      ;;
+    "ip")
+      docker image prune
+      ;;
+    "cp")
+      docker container prune
+      ;;
+    "ish")
+      docker run -it $2 /bin/bash
+      ;;
+    "csh")
+      docker exec -it $2 /bin/bash
+      ;;
+    "e")
+      docker exec $2 $3
+      ;;
+  esac
+}
+
+function dc() {
+  case "$1";in
+    "u") docker-compose up -d
+      ;;
+    "ub") docker-compose up --build
+      ;;
+    "c") docker-compose up --no-start $2
+      ;;
+    "s") docker-compose start $2
+      ;;
+    "r") docker-compose restart $2
+      ;;
+    "d") docker-compose down
+      ;;
+    "b") docker-compose build
+      ;;
+    "sh") docker-compose exec $2 /bin/bash
+      ;;
+    "e") docker-compose exec $2 $3
+      ;;
+    *) echo "option ${@}"
+      docker-compose "$@"
+      ;;
+  esac
+}
+
+function ec2list() {
+  if [ $# -eq 1 ];
+  then
+    aws ec2 describe-instances | jq --arg search_word $1 '.Reservations[].Instances[] | select(.Tags[].Value | contains($search_word)) | {InstanceId, InstanceName: (.Tags[] | select(.Key=="Name").Value),  PrivateIpAddress, State: (.State.Name)}'
+  else
+    aws ec2 describe-instances | jq '.Reservations[].Instances[] | {InstanceId, InstanceName: (.Tags[] | select(.Key=="Name").Value),  PrivateIpAddress, State: (.State.Name)}'
+  fi
+}
+
+function ec2desc() {
+  if [ $# -eq 1 ];
+  then
+    aws ec2 describe-instances | jq --arg search_word $1 '.Reservations[].Instances[] | select(.Tags[].Value | contains($search_word))'
+  else
+  fi
+}
+
+function sf() {
+  ssh -N -D 1080 -l watanabe.kosuke -p 10044 -A agw.slogan.jp
+}
+
+function localldap() {
+  ssh -N agw.slogan.jp -l watanabe.kosuke -p 10044 -L 10389:10.64.1.176:389
+}
+
+function hs() {
+  ag $1 -A 1 ~/.ssh/*
+}
+
+function fzf-src () {
+  local selected_dir=$(ghq list -p | fzf --reverse --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N fzf-src
+bindkey '^]' fzf-src
+
+function _fzf_get_ls_item () {
+  local fzf_ls_item=$(ls -la | fzf --query "$LBUFFER" | awk '{print $(NF)}')
+  echo $fzf_ls_item
+  return fzf_ls_item
+}
+
+function fzf-vim () {
+  local selected_item=$(_fzf_get_ls_item)
+  if [ -n "$selected_item" ]; then
+    if [ -d $selected_item ]; then
+      cd ${selected_item}
+      fzf-vim
+    elif [ -f $selected_item ]; then
+      BUFFER="vim ${selected_item}"
+      zle accept-line
+    fi
+  fi
+  zle clear-screen
+}
+zle -N fzf-vim
+bindkey '^v' fzf-vim
+
+function fzf-history() {
+  local tac
+
+  if which tac > /dev/null; then
+    tac="tac"
+  else
+    tac="tail -r"
+  fi
+
+  BUFFER=$(history -n 1 | eval $tac | fzf --reverse --no-sort --query "$LBUFFER")
+  CURSOR=$#BUFFER
+
+  zle reset-prompt
+}
+
+zle -N fzf-history
+bindkey '^r' fzf-history
