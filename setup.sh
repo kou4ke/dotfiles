@@ -14,10 +14,10 @@ do
     for dotconfig_file in `ls -d dot.config/*`
     do
       echo $dotconfig_file
-      ln -nfsv $HOME/dotfiles/$dotconfig_file $HOME/${dotconfig_file#dot}
+      ln -nfsv `pwd`/$dotconfig_file $HOME/${dotconfig_file#dot}
     done;
   else
-    ln -nfsv $HOME/dotfiles/$dot_file $HOME/${dot_file#dot}
+    ln -nfsv `pwd`/$dot_file $HOME/${dot_file#dot}
   fi
 done
 
