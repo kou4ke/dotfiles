@@ -171,6 +171,10 @@ if [ -e $HOME/.zshfunc ];then
     source $HOME/.zshfunc
 fi
 
+if [ -e $HOME/.zsh_anyenv ];then
+    source $HOME/.zsh_anyenv
+fi
+
 # 初回シェル時のみ tmux実行
 if [ $SHLVL = 1 ]; then
   tmux attach || tmux
