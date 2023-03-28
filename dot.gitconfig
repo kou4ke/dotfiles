@@ -39,7 +39,7 @@
 	trustExitCode = true
 [ghq]
 	vcs = git
-	root = ~/ghq
+	root = ~/git
 [fetch]
 	prune = true
 [init]

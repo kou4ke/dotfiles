@@ -90,14 +90,17 @@ let g:python3_host_prog = $HOME . '/.anyenv/envs/pyenv/shims/python3'
 let g:node_host_prog = $HOME . '/.anyenv/envs/nodenv/versions/16.7.0/bin/neovim-node-host'
 let $NVIM_NODE_LOG_FILE = $HOME . '/.vim/nvim-node.log'
 
-source ~/dotfiles/vimrc.search
-source ~/dotfiles/vimrc.denite
-source ~/dotfiles/vimrc.deol
-source ~/dotfiles/vimrc.syntastic
-source ~/dotfiles/vimrc.template
-source ~/dotfiles/vimrc.vimlsp
-source ~/dotfiles/vimrc.defx
-source ~/dotfiles/vimrc.fzf
+" git(ghq)のディレクトリ
+let git_source_dir = $HOME . '/git'
+
+source "{git_source_dir}/dotfiles/vimrc.search"
+source "{git_source_dir}/dotfiles/vimrc.denite"
+source "{git_source_dir}/dotfiles/vimrc.deol"
+source "{git_source_dir}/dotfiles/vimrc.syntastic"
+source "{git_source_dir}/dotfiles/vimrc.template"
+source "{git_source_dir}/dotfiles/vimrc.vimlsp"
+source "{git_source_dir}/dotfiles/vimrc.defx"
+source "{git_source_dir}/dotfiles/vimrc.fzf"
 
 " main operation
 "カーソルを表示行で移動する。物理行移動は<C-n>,<C-p>
