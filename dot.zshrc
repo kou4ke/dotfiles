@@ -179,10 +179,4 @@ if [ $SHLVL = 1 ]; then
   tmux attach || tmux
 fi
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/kosuke/work/git/sf_datasync_docker/sf_datasync/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/kosuke/work/git/sf_datasync_docker/sf_datasync/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/kosuke/work/git/sf_datasync_docker/sf_datasync/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/kosuke/work/git/sf_datasync_docker/sf_datasync/node_modules/tabtab/.completions/sls.zsh
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
