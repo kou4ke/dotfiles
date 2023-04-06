@@ -2,3 +2,4 @@
 /dot.vim/cache/
 *.swp
 /dot.vim/sonictemplate/text/
+/dot.config/karabiner/automatic_backups/
