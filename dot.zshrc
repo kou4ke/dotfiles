@@ -179,7 +179,7 @@ if [ $SHLVL = 1 ]; then
   tmux attach || tmux
 fi
 
-export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+export PATH="/usr/local/opt/imagemagick@6/bin:$HOME/bin:$PATH"
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/kousuke.watanabe/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kousuke.watanabe/google-cloud-sdk/path.zsh.inc'; fi
