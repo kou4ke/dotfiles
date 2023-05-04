@@ -15,6 +15,7 @@
 	re = restore
 	sm = submodule
   ms = "!( if [ `git config branch.master.remote` ]; then git checkout master; else git checkout main; fi) && git pull --no-commit --rebase"
+  qa = "!git checkout qa && git pull --no-commit --rebase"
 	rq = "!hub pull-request -F .github/PULL_REQUEST_TEMPLATE.md -d -m $1"
 	is = !hub issue create -m "$1"
 	clean-branch = !git branch --merged | egrep -v '\\*|master|main|development|dev|release' | xargs git branch -d
