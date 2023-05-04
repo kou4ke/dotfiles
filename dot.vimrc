@@ -4,10 +4,11 @@
 " -------------------------------------------------
 
 " プラグインが実際にインストールされるディレクトリ
-let s:dein_dir = expand('~/.vim/cache/dein')
+" let s:dein_dir = expand('~/.vim/cache/dein')
+let s:dein_dir = expand('~/.cache/dein')
 " dein.vim 本体
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-let g:dein#auto_recache = 1
+" let g:dein#auto_recache = 1
 let g:dein#cache_directory = $HOME . '/.cache/dein'
 
 " dein.vim がなければ github から落としてくる
@@ -94,14 +95,14 @@ let $NVIM_NODE_LOG_FILE = $HOME . '/.vim/nvim-node.log'
 " git(ghq)のディレクトリ
 let git_source_dir = $HOME . '/git'
 
-source "{git_source_dir}/dotfiles/vimrc.search"
-source "{git_source_dir}/dotfiles/vimrc.denite"
-source "{git_source_dir}/dotfiles/vimrc.deol"
-source "{git_source_dir}/dotfiles/vimrc.syntastic"
-source "{git_source_dir}/dotfiles/vimrc.template"
-source "{git_source_dir}/dotfiles/vimrc.vimlsp"
-source "{git_source_dir}/dotfiles/vimrc.defx"
-source "{git_source_dir}/dotfiles/vimrc.fzf"
+exe("source " . git_source_dir . "/dotfiles/vimrc.search")
+exe("source " . git_source_dir . "/dotfiles/vimrc.denite")
+exe("source " . git_source_dir . "/dotfiles/vimrc.deol")
+exe("source " . git_source_dir . "/dotfiles/vimrc.syntastic")
+exe("source " . git_source_dir . "/dotfiles/vimrc.template")
+exe("source " . git_source_dir . "/dotfiles/vimrc.vimlsp")
+exe("source " . git_source_dir . "/dotfiles/vimrc.defx")
+exe("source " . git_source_dir . "/dotfiles/vimrc.fzf")
 
 " main operation
 "カーソルを表示行で移動する。物理行移動は<C-n>,<C-p>
