@@ -19,6 +19,7 @@ let g:ale_linters = {
 \  'ruby': ['rubocop'],
 \  'sh': ['language-server'],
 \  'ansible': ['ansible-lint'],
+\  'terraform': ['tflint'],
 \}
 let g:ale_fixers = {
 \  'javascript': ['eslint', 'remove_trailing_lines', 'trim_whitespace' ],
