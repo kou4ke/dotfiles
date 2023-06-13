@@ -58,7 +58,11 @@ set number
 set title
 set cursorline     " カーソル行の背景色を変える
 set cursorcolumn   " カーソル位置のカラムの背景色を変える
-set ambiwidth=double
+if exists('g:vscode')
+  set ambiwidth=single
+else
+  set ambiwidth=double
+endif
 set expandtab
 set tabstop=2
 set shiftwidth=2
@@ -103,6 +107,9 @@ exe("source " . git_source_dir . "/dotfiles/vimrc.template")
 exe("source " . git_source_dir . "/dotfiles/vimrc.vimlsp")
 exe("source " . git_source_dir . "/dotfiles/vimrc.defx")
 exe("source " . git_source_dir . "/dotfiles/vimrc.fzf")
+if exists('g:vscoe')
+  exe("source " . git_source_dir . "/dotfiles/vimrc.vscode")
+endif
 
 " main operation
 "カーソルを表示行で移動する。物理行移動は<C-n>,<C-p>
