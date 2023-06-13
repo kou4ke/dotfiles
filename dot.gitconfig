@@ -7,6 +7,7 @@
 	bl = !ghq list
 	br= browse
 	co = checkout
+	cp = cherry-pick -x
 	di = diff
 	pl = pull --no-commit --rebase
 	dc = diff --cached
