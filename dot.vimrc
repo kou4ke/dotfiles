@@ -90,7 +90,8 @@ let mapleader = '\'
 
 " pyenvのパスを追加
 let g:python_host_prog = $HOME . '/.anyenv/envs/pyenv/shims/python2'
-let g:python3_host_prog = $HOME . '/.anyenv/envs/pyenv/shims/python3'
+" let g:python3_host_prog = $HOME . '/.anyenv/envs/pyenv/shims/python3'
+let g:python3_host_prog = '/usr/bin/python3'
 
 " nodeのパスを追加
 let g:node_host_prog = $HOME . '/.anyenv/envs/nodenv/versions/16.7.0/bin/neovim-node-host'
