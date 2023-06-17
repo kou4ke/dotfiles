@@ -37,8 +37,8 @@ autocmd FileType defx call s:defx_my_settings()
       nnoremap <silent><buffer><expr> <CR>
       \ defx#is_directory() ?
       \  defx#do_action('open_directory') :
-      \  defx#do_action('multi', ['drop'])
-      "\  defx#do_action('multi', ['drop', 'vsplit'])
+      " \  defx#do_action('multi', ['drop'])
+      \  defx#do_action('multi', ['drop', 'vsplit'])
       nnoremap <silent><buffer><expr> c  defx#do_action('copy')
       nnoremap <silent><buffer><expr> m  defx#do_action('move')
       nnoremap <silent><buffer><expr> p  defx#do_action('paste')
