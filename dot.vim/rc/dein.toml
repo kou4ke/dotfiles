@@ -101,3 +101,9 @@ repo = 'kristijanhusak/defx-git'
 
 [[plugins]]
 repo = 'junegunn/fzf.vim'
+
+[[plugins]]
+repo = 'mhartington/nvim-typescript'
+build = './install.sh'
+
+
