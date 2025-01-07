@@ -41,26 +41,26 @@ function d() {
 
 function dc() {
   case "$1";in
-    "u") docker-compose up -d
+    "u") docker compose up -d
       ;;
-    "ub") docker-compose up --build
+    "ub") docker compose up --build
       ;;
-    "c") docker-compose up --no-start $2
+    "c") docker compose up --no-start $2
       ;;
-    "s") docker-compose start $2
+    "s") docker compose start $2
       ;;
-    "r") docker-compose restart $2
+    "r") docker compose restart $2
       ;;
-    "d") docker-compose down
+    "d") docker compose down
       ;;
-    "b") docker-compose build
+    "b") docker compose build
       ;;
-    "sh") docker-compose exec $2 /bin/bash
+    "sh") docker compose exec $2 /bin/bash
       ;;
-    "e") docker-compose exec $2 $3
+    "e") docker compose exec $2 $3
       ;;
     *) echo "option ${@}"
-      docker-compose "$@"
+      docker compose "$@"
       ;;
   esac
 }
