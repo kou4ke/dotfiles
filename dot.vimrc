@@ -94,9 +94,15 @@ let g:python_host_prog = $HOME . '/.anyenv/envs/pyenv/shims/python2'
 let g:python3_host_prog = '/usr/bin/python3'
 
 " nodeのパスを追加
-let g:node_host_prog = $HOME . '/.anyenv/envs/nodenv/versions/18.15.0/bin/neovim-node-host'
+let g:node_host_prog = $HOME . '/.anyenv/envs/nodenv/versions/22.12.0/bin/neovim-node-host'
 let $NVIM_NODE_LOG_FILE = $HOME . '/.vim/nvim-node.log'
 
+" rubyの設定追加
+let g:ruby_host_prog = $HOME . '/.local/share/gem/ruby/3.2.0/gems/neovim-0.10.0/exe/neovim-ruby-host'
+
+" perl のcheckhealth対応
+let g:loaded_perl_provider = 0
+"
 " git(ghq)のディレクトリ
 let git_source_dir = $HOME . '/git'
 
