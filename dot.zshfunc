@@ -144,3 +144,11 @@ function fzf-history() {
 
 zle -N fzf-history
 bindkey '^r' fzf-history
+
+function op-stg () {
+  env AWS_DEFAULT_PROFILE=openpage_stg make run_ecs_shell ENV=staging
+}
+
+function op-prod () {
+  env AWS_DEFAULT_PROFILE=openpage_prod make run_ecs_shell ENV=production
+}
