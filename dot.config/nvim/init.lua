@@ -12,6 +12,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- プラグイン設定の読み込み
+require("lazy").setup("plugins")
+
 -- Basic Settings
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
