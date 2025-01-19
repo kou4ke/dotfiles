@@ -191,7 +191,8 @@ augroup END
 nnoremap [tab] <Nop>
 nmap <leader>t [tab]
 
-nnoremap [tab]n :<C-u>:tabnew<CR>
+nnoremap [tab]t :<C-u>:tabnew<CR>
+nnoremap [tab]n :<C-u>:tabnext<CR>
 nnoremap [tab]l :<C-u>:tabnext<CR>
 nnoremap [tab]h :<C-u>:tabprevious<CR>
 nnoremap [tab]L :<C-u>:tablast<CR>
