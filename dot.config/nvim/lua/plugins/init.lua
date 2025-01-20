@@ -58,10 +58,14 @@ return {
   -- インデントガイド
   {
     "lukas-reineke/indent-blankline.nvim",
-    event = { "BufReadPre", "BufNewFile" },
+    -- event = { "BufReadPre", "BufNewFile" },
     main = "ibl",
+    ---@module "ibl"
+    ---@type ibl.config
     opts = {},
-
+    config = function()
+      require("config.indent-blankline")
+    end,
   },
 
   
