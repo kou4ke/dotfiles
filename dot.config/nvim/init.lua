@@ -12,6 +12,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- Leader key
+vim.g.mapleader = '\\'
+
 -- プラグイン設定の読み込み
 require("lazy").setup("plugins")
 
@@ -69,9 +72,6 @@ vim.opt.tags = '.tags;$HOME'
 vim.cmd('colorscheme molokai')
 vim.cmd('highlight Comment ctermfg=243')
 vim.cmd('highlight Visual ctermbg=239')
-
--- Leader key
-vim.g.mapleader = '\\'
 
 -- Language providers
 vim.g.python_host_prog = vim.fn.expand('$HOME/.anyenv/envs/pyenv/shims/python2')
