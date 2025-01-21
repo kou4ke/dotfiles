@@ -36,7 +36,9 @@ return {
       "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     },
-    cmd = "Neotree",
+    config = function()
+      require("config.neo-tree")
+    end,
   },
   
   -- ファジーファインダー (deniteの代替)
