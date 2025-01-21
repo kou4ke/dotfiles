@@ -30,20 +30,25 @@ font:
   normal:
     # family: 'HackGenNerd'
     # family: 'Hack Nerd Font Mono'
-    family: 'Source Code Pro'
+    # family: 'Source Code Pro'
+    # style: Regular
+    family: 'JetBrainsMono Nerd Font Mono'  # または他の選択したフォント
     style: Regular
   bold:
     # family: 'HackGenNerd'
     # family: 'Hack Nerd Font Mono'
-    family: 'Source Code Pro'
+    # family: 'Source Code Pro'
+    family: 'JetBrainsMono Nerd Font Mono'  # または他の選択したフォント
     style: Bold
   italic:
     # family: 'Hack Nerd Font Mono'
-    family: 'Source Code Pro'
+    # family: 'Source Code Pro'
+    family: 'JetBrainsMono Nerd Font Mono'  # または他の選択したフォント
     style: Italic
   bold_italic:
     # family: 'Hack Nerd Font Mono'
-    family: 'Source Code Pro'
+    # family: 'Source Code Pro'
+    family: 'JetBrainsMono Nerd Font Mono'  # または他の選択したフォント
     style: Bold Italic
 window:
   decorations: full         # ボーダーとタイトルバーを表示する
