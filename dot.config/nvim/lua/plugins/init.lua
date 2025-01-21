@@ -55,10 +55,20 @@ return {
     config = true,
   },
   
+  -- 構文のパース
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function()
+      require("config.nvim-treesitter")
+    end,
+  },
+
+  
   -- インデントガイド
   {
     "lukas-reineke/indent-blankline.nvim",
-    -- event = { "BufReadPre", "BufNewFile" },
+    event = { "BufReadPre", "BufNewFile" },
     main = "ibl",
     ---@module "ibl"
     ---@type ibl.config
