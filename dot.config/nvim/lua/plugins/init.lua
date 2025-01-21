@@ -42,10 +42,13 @@ return {
   -- ファジーファインダー (deniteの代替)
   {
     "nvim-telescope/telescope.nvim",
+    tag = '0.1.8',
     dependencies = {
       "nvim-lua/plenary.nvim"
     },
-    cmd = "Telescope",
+    config = function()
+      require("config.telescope")
+    end,
   },
   
   -- コメントアウト
