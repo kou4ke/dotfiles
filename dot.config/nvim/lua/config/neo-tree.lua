@@ -4,6 +4,7 @@ local neotree_prefix = ",t"  -- または好みのプレフィックス
 vim.keymap.set('n', neotree_prefix .. 't', ':Neotree filesystem reveal left<CR>')
 
 require("neo-tree").setup({
+  use_nerdfonts = true,
   default_component_configs = {
     icon = {
       folder_closed = "",
