@@ -22,7 +22,11 @@ return {
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
     },
+    config = function()
+      require("config.lspconfig")
+    end,
   },
+
   
   -- 補完プラグイン
   {
