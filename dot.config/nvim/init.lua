@@ -67,6 +67,7 @@ vim.opt.clipboard = 'unnamed,unnamedplus'
 vim.opt.laststatus = 2
 vim.opt.termguicolors = true
 vim.opt.tags = '.tags;$HOME'
+vim.opt.guifont = "JetBrainsMono Nerd Font Mono"
 
 -- Color scheme
 vim.cmd('colorscheme molokai')
