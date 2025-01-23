@@ -27,6 +27,13 @@ return {
     end,
   },
 
+  -- schemastore.nvim
+  {
+      "b0o/schemastore.nvim",
+      config = function()
+          require("config.schemastore")
+      end,
+  },
   
   -- 補完プラグイン
   {
