@@ -27,6 +27,15 @@ return {
     end,
   },
 
+  -- null-ls
+  {
+      "jose-elias-alvarez/null-ls.nvim",
+      requires = { "nvim-lua/plenary.nvim" },
+      config = function()
+          require("config.null-ls")
+      end,
+  },
+
   -- schemastore.nvim
   {
       "b0o/schemastore.nvim",
