@@ -6,9 +6,16 @@ return {
     lazy = false, -- Neovim起動時に即座に読み込む
     priority = 1000,
   },
-  
-  -- LSP関連
 
+  -- GitHub Copilotプラグインの設定
+  {
+    "github/copilot.vim",
+    config = function()
+      require("config.copilot")
+    end,
+  },
+
+  -- LSP関連
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
