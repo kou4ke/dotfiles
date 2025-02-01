@@ -152,3 +152,9 @@ function op-stg () {
 function op-prod () {
   env AWS_DEFAULT_PROFILE=openpage_prod make run_ecs_shell ENV=production
 }
+
+function op-pf-stg () {
+  env AWS_DEFAULT_PROFILE=openpage_stg make forward_rds ENV=staging
+}
+
+
