@@ -10,6 +10,7 @@
 	cp = cherry-pick -x
 	di = diff
 	pl = pull --no-commit --rebase
+	spl = "!git stash && git pull --no-commit --rebase && git stash pop"
 	dc = diff --cached
 	cl = config --list
 	sw = switch
