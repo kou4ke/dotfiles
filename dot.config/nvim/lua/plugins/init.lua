@@ -113,13 +113,21 @@ return {
     end,
   },
 
+  -- githubへのリンク取得
+  {
+    "linrongbin16/gitlinker.nvim",
+    config = function()
+      require("config.gitlinker")
+    end,
+  },
+
   
+
   -- ホワイトスペース表示
   {
     "ntpeters/vim-better-whitespace",
-
     event = { "BufReadPre", "BufNewFile" },
   },
-  
+
   -- その他の元の設定にあったプラグインは必要に応じて追加
 }
