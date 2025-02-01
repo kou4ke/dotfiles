@@ -34,11 +34,11 @@ null_ls.setup({
 
         -- キーマッピングの設定
         local opts = { noremap=true, silent=true }
-        vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ne", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+        vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-,>e", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
         vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
         vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
-        vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>nq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-        vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>nf", "<cmd>lua vim.lsp.buf.format({async=true})<CR>", opts)
-        vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>nc", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+        vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-,>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+        vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-,>f", "<cmd>lua vim.lsp.buf.format({async=true})<CR>", opts)
+        vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-,>c", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
     end,
 })
