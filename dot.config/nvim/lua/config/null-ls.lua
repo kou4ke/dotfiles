@@ -15,7 +15,8 @@ null_ls.setup({
     {
         -- Pintフォーマッターの設定
         null_ls.builtins.formatting.pint.with({
-            command = "vendor/bin/pint",  -- pintのパスを指定
+            command = "docker",
+            args = { "compose", "exec", "app", "composer", "fmt" },
             filetypes = { "php" }
         }),
     },
