@@ -2,7 +2,7 @@
 
 
 -- 必要なモジュールをロード
-local cmp = require'cmp'
+local cmp = require('cmp')
 local luasnip = require('luasnip')
 
 cmp.setup({
@@ -40,6 +40,20 @@ cmp.setup({
 
             end
         end, { 'i', 's' }),
+        ['<C-n>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            else
+                fallback()
+            end
+        end, { 'i', 'c' }),
+        ['<C-p>'] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
+            else
+                fallback()
+            end
+        end, { 'i', 'c' }),
     },
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
@@ -66,8 +80,12 @@ cmp.setup.filetype('gitcommit', {
 cmp.setup.cmdline('/', {
     sources = {
         { name = 'buffer' }
-    }
     },
+    mapping = cmp.mapping.preset.cmdline({
+        ['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+        ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Enterキーで選択を確定
+    }),
 })
 
 
