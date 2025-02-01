@@ -40,6 +40,9 @@ else
   vim.opt.ambiwidth = 'double'
 end
 
+-- 自動的にCRLFをLFに変換
+vim.opt.fileformats = { "unix", "dos" }
+
 -- Indentation settings
 vim.opt.expandtab = true
 vim.opt.tabstop = 2
