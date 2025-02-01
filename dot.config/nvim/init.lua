@@ -183,22 +183,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end
 })
 
--- Daily Memo function
-vim.api.nvim_create_user_command('EditDailyMemo', function()
-  local daily_memo_dir = vim.fn.expand('~/tmp')
-  if vim.fn.isdirectory(vim.env.DAILY_MEMO_DIR or '') == 1 then
-    daily_memo_dir = vim.env.DAILY_MEMO_DIR
-  end
-  local memo_dir = string.format('%s/%s/%s', daily_memo_dir, 
-
-    os.date('%Y'), os.date('%m'))
-  local memo_file = string.format('%s/%s.txt', memo_dir, os.date('%d'))
-  vim.fn.mkdir(memo_dir, 'p')
-  vim.cmd('edit ' .. memo_file)
-end, {})
-
-map('n', '<Leader>m', ':EditDailyMemo<CR>')
-
 -- Markdown preview command
 vim.api.nvim_create_user_command('MarkdownPreview', function()
   local filename = vim.fn.expand('%')
