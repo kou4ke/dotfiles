@@ -3,13 +3,13 @@
 
 -- 必要なモジュールをロード
 local cmp = require'cmp'
+local luasnip = require('luasnip')
 
 cmp.setup({
 
     snippet = {
         expand = function(args)
-            -- For `vsnip` users.
-            vim.fn["vsnip#anonymous"](args.body)
+          luasnip.lsp_expand(args.body)
         end,
     },
     mapping = {
@@ -44,7 +44,7 @@ cmp.setup({
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
 
-        { name = 'vsnip' },
+        { name = 'luasnip' },
 
     }, {
         { name = 'buffer' },
@@ -67,6 +67,7 @@ cmp.setup.cmdline('/', {
     sources = {
         { name = 'buffer' }
     }
+    },
 })
 
 

@@ -99,7 +99,27 @@ return {
     end,
   },
 
-  
+  -- スニペット
+  {
+    "L3MON4D3/LuaSnip",
+    -- follow latest release.
+    dependencies = {
+      "rafamadriz/friendly-snippets"
+    },
+    version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+    -- install jsregexp (optional!).
+    build = "make install_jsregexp",
+    config = function()
+      require("luasnip.loaders.from_lua").load()
+    end,
+  },
+
+  -- LuaSnipの拡張cmp対応
+  {
+    "saadparwaiz1/cmp_luasnip",
+    after = "LuaSnip",
+  },
+
   -- インデントガイド
   {
     "lukas-reineke/indent-blankline.nvim",
