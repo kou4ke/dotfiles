@@ -134,6 +134,27 @@ function fzf-history() {
   zle reset-prompt
 }
 
+# 定義: clean-branchスクリプト
+function clean-branch() {
+  # 現在のブランチを取得
+  current_branch=$(git branch --show-current)
+
+  # 通常のマージ済みブランチの削除
+  git branch --merged | egrep -v '\\*|master|main|development|dev|release' | xargs -r git branch -d
+
+  # squash mergeされたブランチの検出と削除
+  for branch in $(git branch | egrep -vE '^\*|master|main|development|dev|release'); do
+
+    echo "Checking branch $branch"
+    # ブランチの最後のコミットが現在のブランチに含まれているかを確認
+    last_commit=$(git rev-parse $branch)
+    if git merge-base --is-ancestor $last_commit $current_branch; then
+      echo "Deleting branch $branch (squash merged)"
+      git branch -d $branch
+    fi
+  done
+}
+
 zle -N fzf-history
 bindkey '^r' fzf-history
 
