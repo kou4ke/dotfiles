@@ -82,14 +82,6 @@ function ec2desc() {
   fi
 }
 
-function sf() {
-  ssh -N -D 1080 -l watanabe.kosuke -p 10044 -A agw.slogan.jp
-}
-
-function localldap() {
-  ssh -N agw.slogan.jp -l watanabe.kosuke -p 10044 -L 10389:10.64.1.176:389
-}
-
 function hs() {
   ag $1 -A 1 ~/.ssh/*
 }
