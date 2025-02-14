@@ -6,7 +6,7 @@ local telescope_prefix = ",f"  -- または好みのプレフィックス
 vim.keymap.set('n', telescope_prefix .. 'f', builtin.find_files, { desc = 'Telescope find files' })
 vim.keymap.set('n', telescope_prefix .. 'o', builtin.oldfiles, { desc = 'Telescope oldfiles files' })
 
-vim.keymap.set('n', telescope_prefix .. '/', builtin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', telescope_prefix .. 'r', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', telescope_prefix .. 'b', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', telescope_prefix .. 'h', builtin.help_tags, { desc = 'Telescope help tags' })
 vim.keymap.set('n', telescope_prefix .. 'gc', builtin.git_commits, { desc = 'Telescope git commit' })
