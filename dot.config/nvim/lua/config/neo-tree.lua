@@ -4,7 +4,7 @@ local neotree_prefix = ",t"  -- または好みのプレフィックス
 vim.keymap.set('n', neotree_prefix .. 'f', ':Neotree filesystem reveal left<CR>')
 vim.keymap.set('n', neotree_prefix .. 't', ':Neotree toggle<CR>')
 
-local neo_tree_width = 70
+local neo_tree_width = 50
 
 require("neo-tree").setup({
 
