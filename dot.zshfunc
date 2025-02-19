@@ -170,4 +170,9 @@ function op-pf-stg () {
   env AWS_DEFAULT_PROFILE=openpage_stg make forward_rds ENV=staging
 }
 
+function op-pf-prod () {
+  env AWS_DEFAULT_PROFILE=openpage_prod make forward_rds ENV=production
+}
+
+
 
