@@ -19,26 +19,45 @@ return {
   {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
+    dependencies = { "williamboman/mason-lspconfig.nvim" },
     config = function()
       require("config.lspconfig")
     end,
   },
 
+  -- manson.vim
+  {
+    "williamboman/mason.nvim",
+    build = ":MasonUpdate",
+    config = function()
+      require("config.manson")
+    end,
+  },
+
+  -- manson-lsp
+  {
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = { "williamboman/mason.nvim" },
+    config = function()
+      require("config.manson-lsp")
+    end,
+  },
+
   -- null-ls
   {
-      "jose-elias-alvarez/null-ls.nvim",
-      requires = { "nvim-lua/plenary.nvim" },
-      config = function()
-          require("config.null-ls")
-      end,
+    "jose-elias-alvarez/null-ls.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+    config = function()
+        require("config.null-ls")
+    end,
   },
 
   -- schemastore.nvim
   {
-      "b0o/schemastore.nvim",
-      config = function()
-          require("config.schemastore")
-      end,
+    "b0o/schemastore.nvim",
+    config = function()
+        require("config.schemastore")
+    end,
   },
   
   -- 補完プラグイン

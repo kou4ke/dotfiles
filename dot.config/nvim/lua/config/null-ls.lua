@@ -5,7 +5,6 @@ null_ls.setup({
         -- Lintツールの設定
         null_ls.builtins.diagnostics.eslint_d,  -- 高速なESLint
         -- null_ls.builtins.diagnostics.eslint,  -- 通常のESLint（高速版を使わない場合）
-        
         -- フォーマットツールの設定
 
         null_ls.builtins.formatting.prettier.with({
