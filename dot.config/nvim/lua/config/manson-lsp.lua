@@ -13,7 +13,7 @@ require('mason-lspconfig').setup({
         "cssls",
         "stylelint_lsp",
         "tailwindcss",
-        "sqls",
+        -- "sqls",
         "lua_ls",
         -- "eslint_d",
         -- "prettier"

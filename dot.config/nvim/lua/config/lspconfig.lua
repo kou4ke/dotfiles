@@ -74,21 +74,21 @@ lspconfig.tailwindcss.setup{
     capabilities = capabilities,
 }
 -- SQL (SQL Language Server) の設定
-lspconfig.sqls.setup{
-    cmd = { "sqls" },
-    filetypes = { "sql" },
-    settings = {
-      -- sqls = {
-      --   connections = {
-      --     {
-      --       driver = 'mysql',
-      --       dataSourceName = 'user:password@tcp(127.0.0.1:3306)/dbname',
-      --     },
-      --   },
-      -- },
-    },
-    capabilities = capabilities
-}
+-- lspconfig.sqls.setup{
+--     cmd = { "sqls" },
+--     filetypes = { "sql" },
+--     settings = {
+--       -- sqls = {
+--       --   connections = {
+--       --     {
+--       --       driver = 'mysql',
+--       --       dataSourceName = 'user:password@tcp(127.0.0.1:3306)/dbname',
+--       --     },
+--       --   },
+--       -- },
+--     },
+--     capabilities = capabilities
+-- }
 -- lua (lua Language Server) の設定
 lspconfig.lua_ls.setup{
     filetypes = { "lua" },
