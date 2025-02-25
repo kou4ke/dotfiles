@@ -10,5 +10,7 @@ bind main    <Ctrl-r> !git rebase -i %(commit)
 bind diff    <Ctrl-r> !git rebase -i %(commit)
 
 bind status  A !git commit --amend
+bind status  N !git rebase --continue
+bind status  B !git rebase --abort
 
 bind generic P ?git push -u %(remote) %(repo:head)
