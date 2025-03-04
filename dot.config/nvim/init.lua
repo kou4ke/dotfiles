@@ -195,8 +195,7 @@ end, {})
 -- Better whitespace settings
 vim.g.strip_whitespace_on_save = 0
 vim.g.better_whitespace_filetypes_blacklist = {'defx', 'denite'}
-map('n', '<leader>si', ':StripWhitespace<CR>')
-
+map('n', '<leader>sw', ':StripWhitespace<CR>')
 
 -- Quickfix settings
 
