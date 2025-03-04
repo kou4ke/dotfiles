@@ -113,6 +113,7 @@ map('n', '<C-l>', '$')
 map('v', '<C-l>', '$')
 map('n', '<C-j>', '}')
 map('n', '<C-k>', '{')
+map('n', '<leader>z', ':noh<CR>')
 
 -- Insert mode mappings
 
