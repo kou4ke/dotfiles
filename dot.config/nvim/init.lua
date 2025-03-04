@@ -106,7 +106,6 @@ map('n', 'gk', 'k')
 
 -- Additional mappings
 map('n', '<Space>l', '<C-l>')
-map('n', ',lc', ':lcd %:h<CR>')
 
 map('n', '<C-h>', '^')
 map('v', '<C-h>', '^')
@@ -185,16 +184,6 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.shiftwidth = 4
   end
 })
-
--- Markdown preview command
-vim.api.nvim_create_user_command('MarkdownPreview', function()
-  local filename = vim.fn.expand('%')
-  local viewer = 'firefox'
-  local open_cmd = 'open -a '
-  local open_output = vim.fn.system(open_cmd .. viewer .. ' ' .. filename)
-  print(open_output)
-end, {})
-
 
 -- Space conversion command
 vim.api.nvim_create_user_command('SpaceH2toZen', function()
