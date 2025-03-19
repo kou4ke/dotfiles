@@ -3,7 +3,7 @@ require('mason-lspconfig').setup({
         "pyright",
         "intelephense",
         "volar",
-        "tsserver",
+        "typescript-language-server",
         "terraformls",
         "bashls",
         "dockerls",
