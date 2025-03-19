@@ -1,14 +1,8 @@
 local gitlinker = require('gitlinker')
+local gitlinker_prefix = ",g"  -- または好みのプレフィックス
 
-gitlinker.setup {
-  opts = {
-    action_callback = function(url)
-      print("Generated URL: " .. url)
-      require('gitlinker.actions').open_in_browser(url)
-    end,
-    print_url = true,
-    -- action_callback = require('gitlinker.actions').open_in_browser,
-    -- print_url = false,
-  },
-  mappings = '<Leader>go',
-}
+vim.keymap.set('n', gitlinker_prefix .. 'l', ':GitLink<CR>')
+vim.keymap.set('n', gitlinker_prefix .. 'b', ':GitLink blame<CR>')
+vim.keymap.set('n', gitlinker_prefix .. 'c', ':GitLink current_branch<CR>')
+
+gitlinker.setup {}
