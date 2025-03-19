@@ -3,6 +3,7 @@ local lspconfig = require'lspconfig'
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local schemastore = require('schemastore')
+local lsp_diagnostic = require("config.lsp-diagnostic")
 
 -- LSPサーバーの設定
 -- (ここではpyrightを例とする)
@@ -21,29 +22,35 @@ lspconfig.intelephense.setup{
         };
     },
     capabilities = capabilities,
+    on_attach = lsp_diagnostic.on_attach,
 }
 -- Vue.js (Volar) の設定
 lspconfig.volar.setup{
     cmd = { "vls" },
     filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = lsp_diagnostic.on_attach,
 }
 -- Terraform (Terraform Language Server) の設定
 lspconfig.terraformls.setup{
     filetypes = { 'terraform' },
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = lsp_diagnostic.on_attach,
 }
 -- Shell (Bash Language Server) の設定
 lspconfig.bashls.setup{
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = lsp_diagnostic.on_attach,
 }
 -- Docker (Dockerfile Language Server) の設定
 lspconfig.dockerls.setup{
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = lsp_diagnostic.on_attach,
 }
 -- YAML (YAML Language Server) の設定
 lspconfig.yamlls.setup{
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = lsp_diagnostic.on_attach,
 }
 -- JSON (JSON Language Server) の設定
 lspconfig.jsonls.setup{
@@ -55,16 +62,19 @@ lspconfig.jsonls.setup{
         },
     },
     capabilities = capabilities,
+    on_attach = lsp_diagnostic.on_attach,
 }
 -- HTML (HTML Language Server) の設定
 lspconfig.html.setup{
     filetypes = { "html" },
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = lsp_diagnostic.on_attach,
 }
 -- CSS (CSS Language Server) の設定
 lspconfig.cssls.setup{
     filetypes = { "css" },
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = lsp_diagnostic.on_attach,
 }
 -- SCSS (Sass Language Server) の設定
 --
@@ -72,6 +82,7 @@ lspconfig.tailwindcss.setup{
     cmd = { "npx", "tailwindcss-language-server", "--stdio" },
     filetypes = { "html", "css", "scss", "sass", "javascript", "javascriptreact", "typescript", "typescriptreact" },
     capabilities = capabilities,
+    on_attach = lsp_diagnostic.on_attach,
 }
 -- SQL (SQL Language Server) の設定
 -- lspconfig.sqls.setup{
@@ -112,5 +123,6 @@ lspconfig.lua_ls.setup{
             },
         },
     },
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = lsp_diagnostic.on_attach,
 }

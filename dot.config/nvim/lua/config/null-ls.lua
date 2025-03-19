@@ -1,4 +1,5 @@
 local null_ls = require("null-ls")
+local lsp_diagnostic = require("config.lsp-diagnostic")
 
 null_ls.setup({
     sources = {
@@ -20,7 +21,7 @@ null_ls.setup({
         }),
     },
     on_attach = function(client, bufnr)
-        -- フォーマットの自動実行
+        lsp_diagnostic.on_attach(client, bufnr)
         if client.server_capabilities.documentFormattingProvider then
             vim.api.nvim_create_augroup("LspFormatting", { clear = true })
             vim.api.nvim_create_autocmd("BufWritePre", {
