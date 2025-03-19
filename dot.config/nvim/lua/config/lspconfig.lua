@@ -17,7 +17,7 @@ lspconfig.intelephense.setup{
     settings = {
         intelephense = {
             files = {
-                maxSize = 1000000;
+                maxSize = 5000000;
             };
         };
     },
