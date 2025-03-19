@@ -1,7 +1,9 @@
 local null_ls = require("null-ls")
 local lsp_diagnostic = require("config.lsp-diagnostic")
+local Path = require("plenary.path")
 
 null_ls.setup({
+    temp_dir = os.getenv("HOME").."/tmp/.nvim/null-ls",
     sources = {
         -- Lintツールの設定
         null_ls.builtins.diagnostics.eslint_d,  -- 高速なESLint
@@ -11,35 +13,37 @@ null_ls.setup({
         null_ls.builtins.formatting.prettier.with({
             filetypes = {"vue", "javascript", "typescript", "css", "html", "json"}
         }),
-    },
-    {
         -- Pintフォーマッターの設定
         null_ls.builtins.formatting.pint.with({
             command = "docker",
-            args = { "compose", "exec", "app", "composer", "fmt" },
+            args = function(params)
+                local relative_path = Path:new(params.bufname):make_relative(vim.loop.cwd())
+                return {
+                    "compose",
+                    "exec",
+                    "app",
+                    "composer",
+                    "fmt",
+                    "--",
+                    relative_path
+                }
+            end,
             filetypes = { "php" }
         }),
     },
     on_attach = function(client, bufnr)
         lsp_diagnostic.on_attach(client, bufnr)
+        -- フォーマット後にバッファをリロード
         if client.server_capabilities.documentFormattingProvider then
-            vim.api.nvim_create_augroup("LspFormatting", { clear = true })
-            vim.api.nvim_create_autocmd("BufWritePre", {
-                group = "LspFormatting",
-                buffer = bufnr,
-                callback = function()
-                    vim.lsp.buf.format({ bufnr = bufnr })
-                end,
-            })
+            vim.cmd([[
+                augroup LspFormatting
+                    autocmd! * <buffer>
+                    autocmd BufWritePost <buffer> lua vim.lsp.buf.format({ async = true, filter = function(c) return c.name == "null-ls" end })
+                    autocmd BufWritePost <buffer> :edit
+                augroup END
+            ]])
         end
-
-        -- キーマッピングの設定
-        local opts = { noremap=true, silent=true }
-        vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-,>e", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-        vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
-        vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
-        vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-,>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-        vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-,>f", "<cmd>lua vim.lsp.buf.format({async=true})<CR>", opts)
-        vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-,>c", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
     end,
 })
+
+
