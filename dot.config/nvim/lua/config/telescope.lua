@@ -36,7 +36,12 @@ require('telescope').setup{
         theme = "dropdown",
         hidden = true,
       },
-
+      grep_string = {
+      -- 大文字小文字無視して検索する設定
+        additional_args = function(opts)
+          return {"-i"}
+        end
+      }
     --   picker_config_key = value,
     --   ...
     }
