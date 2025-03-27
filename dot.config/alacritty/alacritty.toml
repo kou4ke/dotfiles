@@ -18,21 +18,20 @@ bindings = [
 # shell = { program = "/bin/zsh", args = ["--login"] }
 
 [font]
-size = 11
+size = 12
 [font.normal]
-family = "JetBrainsMono Nerd Font Mono"
+family = "HackGenNerd"
 style = "Regular"
 [font.bold]
-family = "JetBrainsMono Nerd Font Mono"
+family = "HackGenNerd"
 style = "Bold"
 
 [font.italic]
-family = "JetBrainsMono Nerd Font Mono"
+family = "HackGenNerd"
 style = "Italic"
 
 [font.bold_italic]
-family = "JetBrainsMono Nerd Font Mono"
-
+family = "HackGenNerd"
 style = "Bold Italic"
 
 [window]
