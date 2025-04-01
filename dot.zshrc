@@ -120,7 +120,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 ########################################
 # エイリアス
 
-alias ll='ls -la'
+alias ll='eza --icons --git --time-style relative -al'
 
 alias rm='rm -i'
 alias cp='cp -i'
@@ -146,6 +146,7 @@ case ${OSTYPE} in
     darwin*)
         #Mac用の設定
         export CLICOLOR=1
+        alias ll='ls -la'
         alias ls='ls -G -F'
         alias -g vim='nvim'
         alias -g vif='nvim -c "Defx -show-ignored-files -buffer-name=defx"'
@@ -158,7 +159,8 @@ case ${OSTYPE} in
         PROMPT="%{${fg[yellow]}%}%D %T%{${reset_color}%}%{${fg[cyan]}%}[%n@%m]%{${reset_color}%} %~
 %# "
         #Linux用の設定
-        alias ls='ls -F --color=auto'
+        alias ls='eza -F --color=auto'
+        alias ll='eza --icons --git --time-style relative -al'
         alias -g vim='nvim'
         export GIT_EDITOR='nvim'
         ;;
