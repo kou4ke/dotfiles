@@ -1,7 +1,7 @@
 local M = {}
 
 function M.on_attach(client, bufnr)
-    print("LSP attached: " .. client.name)  -- LSPサーバー名を出力
+    -- print("LSP attached: " .. client.name)  -- LSPサーバー名を出力
 
     -- フォーマットの自動実行
     if client.server_capabilities.documentFormattingProvider then
@@ -10,7 +10,7 @@ function M.on_attach(client, bufnr)
             group = "LspFormatting",
             buffer = bufnr,
             callback = function()
-                print("Formatting with null-ls")  -- デバッグ情報を追加
+                -- print("Formatting with null-ls")  -- デバッグ情報を追加
                 vim.lsp.buf.format({
                     bufnr = bufnr,
                     filter = function(c)
