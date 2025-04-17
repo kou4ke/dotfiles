@@ -8,8 +8,9 @@ null_ls.setup({
         -- Lintツールの設定
         null_ls.builtins.diagnostics.eslint_d,  -- 高速なESLint
         -- null_ls.builtins.diagnostics.eslint,  -- 通常のESLint（高速版を使わない場合）
-        -- フォーマットツールの設定
+        null_ls.builtins.formatting.tflint,  -- Terraformのフォーマット
 
+        -- フォーマットツールの設定
         null_ls.builtins.formatting.prettier.with({
             filetypes = {"vue", "javascript", "typescript", "css", "html", "json"}
         }),
@@ -29,6 +30,13 @@ null_ls.setup({
                 }
             end,
             filetypes = { "php" }
+        }),
+
+        -- Terraformフォーマッターの設定
+        null_ls.builtins.formatting.terraform_fmt.with({
+            command = "terraform",
+            args = { "fmt", "-" },
+            filetypes = { "terraform" }
         }),
     },
     on_attach = function(client, bufnr)
