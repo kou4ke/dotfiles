@@ -43,7 +43,9 @@ function dc() {
   case "$1";in
     "u") docker compose up -d
       ;;
-    "ub") docker compose up --build
+    "ub") docker compose up --build --watch
+      ;;
+    "uw") docker compose up -d --watch
       ;;
     "c") docker compose up --no-start $2
       ;;
