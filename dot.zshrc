@@ -70,6 +70,23 @@ function _update_vcs_info_msg() {
 }
 add-zsh-hook precmd _update_vcs_info_msg
 
+# RPROMPTの表示/非表示を切り替える関数
+function toggle_rprompt() {
+    if [[ -n "$RPROMPT" ]]; then
+        RPROMPT=""
+    else
+        LANG=en_US.UTF-8 vcs_info
+        RPROMPT="${vcs_info_msg_0_}"
+    fi
+    # 再描画
+    zle reset-prompt
+}
+
+# 関数をウィジェットとして登録
+zle -N toggle_rprompt
+
+# キーバインドの設定（Alt + / ）
+bindkey "^[/" toggle_rprompt
 
 ########################################
 # オプション
