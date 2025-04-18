@@ -20,18 +20,20 @@ bindings = [
 [font]
 size = 12
 [font.normal]
-family = "HackGenNerd"
-style = "Regular"
+family = "PlemolJP Console NF"
+# style = "Medium"
+style = "Text"
+
 [font.bold]
-family = "HackGenNerd"
+family = "PlemolJP Console NF"
 style = "Bold"
 
 [font.italic]
-family = "HackGenNerd"
+family = "PlemolJP Console NF"
 style = "Italic"
 
 [font.bold_italic]
-family = "HackGenNerd"
+family = "PlemolJP Console NF"
 style = "Bold Italic"
 
 [window]
