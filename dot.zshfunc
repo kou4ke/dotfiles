@@ -138,21 +138,22 @@ function fzf-history() {
 
 # 定義: clean-branchスクリプト
 function clean-branch() {
-  # 現在のブランチを取得
+  # 現在のブランチ名を取得
   current_branch=$(git branch --show-current)
 
-  # 通常のマージ済みブランチの削除
-  git branch --merged | egrep -v '\\*|master|main|development|dev|release' | xargs -r git branch -d
+  # 通常のマージ済みブランチ（fast-forward/merge）の削除
+  git branch --merged | egrep -v '\*|master|main|development|dev|release' | xargs -r git branch -d
 
-  # squash mergeされたブランチの検出と削除
-  for branch in $(git branch | egrep -vE '^\*|master|main|development|dev|release'); do
-
-    echo "Checking branch $branch"
-    # ブランチの最後のコミットが現在のブランチに含まれているかを確認
-    last_commit=$(git rev-parse $branch)
-    if git merge-base --is-ancestor $last_commit $current_branch; then
-      echo "Deleting branch $branch (squash merged)"
-      git branch -d $branch
+  # squash mergeやrebase等で内容が取り込まれているブランチのチェックと削除
+  for branch in $(git branch | sed 's/..//' | egrep -v '^(master|main|development|dev|release)$' | grep -v "^$current_branch$"); do
+    # すでに消えていればスキップ
+    git show-ref --verify --quiet refs/heads/$branch || continue
+    # cherryで全コミットが取り込まれている場合（+がなければOK）
+    if [ -z "$(git cherry $current_branch $branch | grep '^+')" ]; then
+      echo "Deleting branch $branch (fully merged by squash/rebase/merge)"
+      git branch -D $branch
+    else
+      echo "Skipping branch $branch (unmerged commits remain)"
     fi
   done
 }
