@@ -179,6 +179,7 @@ case ${OSTYPE} in
         alias ls='eza -F --color=auto'
         alias ll='eza --icons --git --time-style relative -al'
         alias -g vim='nvim'
+        alias xclip='xclip -selection clipboard'
         export GIT_EDITOR='nvim'
         ;;
 esac
