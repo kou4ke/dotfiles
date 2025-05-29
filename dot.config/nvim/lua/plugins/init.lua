@@ -15,6 +15,20 @@ return {
     end,
   },
 
+  -- CopilotChat
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    dependencies = {
+        "github/copilot.vim",
+        "nvim-lua/plenary.nvim"
+    },
+    build = "make tiktoken",
+    config = function()
+      require("config.copilotchat")
+    end,
+  },
+
+
   -- LSP関連
   {
     "neovim/nvim-lspconfig",
@@ -59,7 +73,7 @@ return {
         require("config.schemastore")
     end,
   },
-  
+
   -- 補完プラグイン
   {
     "hrsh7th/nvim-cmp",
@@ -88,7 +102,7 @@ return {
       require("config.neo-tree")
     end,
   },
-  
+
   -- ファジーファインダー (deniteの代替)
   {
     "nvim-telescope/telescope.nvim",
@@ -100,14 +114,14 @@ return {
       require("config.telescope")
     end,
   },
-  
+
   -- コメントアウト
   {
     "numToStr/Comment.nvim",
     event = { "BufReadPre", "BufNewFile" },
     config = true,
   },
-  
+
   -- 構文のパース
   {
     "nvim-treesitter/nvim-treesitter",
