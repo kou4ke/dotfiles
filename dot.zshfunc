@@ -45,7 +45,7 @@ function dc() {
       ;;
     "ub") docker compose up --build --watch
       ;;
-    "uw") docker compose up -d --watch
+    "uw") docker compose up --watch
       ;;
     "c") docker compose up --no-start $2
       ;;
