@@ -30,7 +30,7 @@ return {
     "williamboman/mason.nvim",
     build = ":MasonUpdate",
     config = function()
-      require("config.manson")
+      require("config.mason")
     end,
   },
 
@@ -39,7 +39,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     dependencies = { "williamboman/mason.nvim" },
     config = function()
-      require("config.manson-lsp")
+      require("config.mason-lspconfig")
     end,
   },
 
