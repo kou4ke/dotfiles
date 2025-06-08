@@ -174,6 +174,7 @@ return {
     end,
   },
 
+  -- ステータスライン
   {
     'nvim-lualine/lualine.nvim',
     dependencies = {
@@ -189,6 +190,15 @@ return {
   {
     "ntpeters/vim-better-whitespace",
     event = { "BufReadPre", "BufNewFile" },
+  },
+
+  -- terminalの設定
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    config = function()
+      require("config.toggleterm")
+    end,
   },
 
   -- その他の元の設定にあったプラグインは必要に応じて追加

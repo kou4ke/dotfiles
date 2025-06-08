@@ -169,7 +169,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 })
 
 -- Tab operations
-map('n', '<leader>tt', ':tabnew<CR>')
+-- map('n', '<leader>tt', ':tabnew<CR>')
 
 map('n', '<leader>tn', ':tabnext<CR>')
 map('n', '<leader>tl', ':tabnext<CR>')
