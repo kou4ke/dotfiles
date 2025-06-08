@@ -35,6 +35,7 @@ require('telescope').setup{
         -- find_files picker の設定 (必要があれば)
         theme = "dropdown",
         hidden = true,
+        no_ignore = true,
       },
       grep_string = {
       -- 大文字小文字無視して検索する設定
