@@ -18,13 +18,6 @@ HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
 
-# プロンプト
-# 1行表示
-# PROMPT="%~ %# "
-# 2行表示
-PROMPT="%{${fg[yellow]}%}%D %T%{${reset_color}%}%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~
-%# "
-
 
 # 単語の区切り文字を指定する
 autoload -Uz select-word-style
@@ -61,32 +54,48 @@ _cache_hosts=(`cat ~/.ssh/config | grep "^Host"|awk '{print $2}'`)
 autoload -Uz vcs_info
 autoload -Uz add-zsh-hook
 
-zstyle ':vcs_info:*' formats '%F{green}(%s)-[%b]%f'
+zstyle ':vcs_info:*' formats '%F{cyan}(%s)-[%b]%f'
 zstyle ':vcs_info:*' actionformats '%F{red}(%s)-[%b|%a]%f'
 
 function _update_vcs_info_msg() {
     LANG=en_US.UTF-8 vcs_info
-    RPROMPT="${vcs_info_msg_0_}"
+    if [[ -n $vcs_info_msg_0_ ]]; then
+        RPROMPT="${vcs_info_msg_0_}"
+    else
+        RPROMPT=""
+    fi
 }
 add-zsh-hook precmd _update_vcs_info_msg
 
 # RPROMPTの表示/非表示を切り替える関数
-function toggle_rprompt() {
-    if [[ -n "$RPROMPT" ]]; then
-        RPROMPT=""
-    else
-        LANG=en_US.UTF-8 vcs_info
-        RPROMPT="${vcs_info_msg_0_}"
-    fi
-    # 再描画
-    zle reset-prompt
-}
+# function toggle_rprompt() {
+#     if [[ -n "$RPROMPT" ]]; then
+#         RPROMPT=""
+#     else
+#         LANG=en_US.UTF-8 vcs_info
+#         RPROMPT="${vcs_info_msg_0_}"
+#     fi
+#     # 再描画
+#     zle reset-prompt
+# }
+#
+# # 関数をウィジェットとして登録
+# zle -N toggle_rprompt
+#
+# # キーバインドの設定（Alt + / ）
+# bindkey "^[/" toggle_rprompt
+#
+#
+#
+# プロンプト
+# 1行表示
+# PROMPT="%~ %# "
+# 2行表示
+PROMPT="%{${fg[yellow]}%}%D %T%{${reset_color}%}%{${fg[green]}%}[%n@%m]%{${reset_color}%} ${vcs_info_msg_0_} %~
+%# "
 
-# 関数をウィジェットとして登録
-zle -N toggle_rprompt
 
-# キーバインドの設定（Alt + / ）
-bindkey "^[/" toggle_rprompt
+
 
 ########################################
 # オプション
@@ -173,12 +182,11 @@ case ${OSTYPE} in
         alias updatedb='sudo /usr/libexec/locate.updatedb'
         ;;
     linux*)
-        PROMPT="%{${fg[yellow]}%}%D %T%{${reset_color}%}%{${fg[cyan]}%}[%n@%m]%{${reset_color}%} %~
-%# "
         #Linux用の設定
         alias ls='eza -F --color=auto'
         alias ll='eza --icons --git --time-style relative -al'
         alias -g vim='nvim'
+        alias -g cop='nvim +CopilotChat'
         alias xclip='xclip -selection clipboard'
         export GIT_EDITOR='nvim'
         ;;
