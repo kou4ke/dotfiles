@@ -14,3 +14,4 @@ bind status  N !git rebase --continue
 bind status  B !git rebase --abort
 
 bind generic P ?git push -u %(remote) %(repo:head)
+bind generic <Ctrl-t> ?git stash
