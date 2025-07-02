@@ -177,5 +177,15 @@ function op-pf-prod () {
   env AWS_DEFAULT_PROFILE=openpage_prod make forward_rds ENV=production
 }
 
+function ap-stg () {
+  export AWS_PROFILE=openpage_stg
+}
 
+function ap-prod () {
+  export AWS_PROFILE=openpage_prod
+}
+
+function ap-default () {
+  unset AWS_PROFILE
+}
 
