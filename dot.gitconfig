@@ -25,6 +25,8 @@
 	ic = !hub issue create -m "$1"
 	it = !hub issue create -m "$1" -F .github/ISSUE_TEMPLATE/wishlist_request.md
 	ib = "!hub browse -- issues/$1"
+	closed-issue = "!gh issue list -s closed --json number,title,closedAt -q '[.[] | [.number, .closedAt, .title]] | ([\"issue\", \"closedAt\",\"title\"], .[]) | @csv' -L 1000"
+	closed-pr = "!gh pr list -s closed --json number,title,closedAt -q '[.[] | [.number, .closedAt, .title]] | ([\"pull request\", \"closedAt\",\"title\"], .[]) | @csv' -L 1000"
 	clean-branch = !git branch --merged | egrep -v '\\*|master|main|development|dev|release' | xargs git branch -d
 [color]
 	ui = true
