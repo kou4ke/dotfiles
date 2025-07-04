@@ -43,7 +43,9 @@ function dc() {
   case "$1";in
     "u") docker compose up -d
       ;;
-    "ub") docker compose up --build
+    "ub") docker compose up --build --watch
+      ;;
+    "uw") docker compose up --watch
       ;;
     "c") docker compose up --no-start $2
       ;;
@@ -80,14 +82,6 @@ function ec2desc() {
     aws ec2 describe-instances | jq --arg search_word $1 '.Reservations[].Instances[] | select(.Tags[].Value | contains($search_word))'
   else
   fi
-}
-
-function sf() {
-  ssh -N -D 1080 -l watanabe.kosuke -p 10044 -A agw.slogan.jp
-}
-
-function localldap() {
-  ssh -N agw.slogan.jp -l watanabe.kosuke -p 10044 -L 10389:10.64.1.176:389
 }
 
 function hs() {
@@ -142,6 +136,28 @@ function fzf-history() {
   zle reset-prompt
 }
 
+# 定義: clean-branchスクリプト
+function clean-branch() {
+  # 現在のブランチ名を取得
+  current_branch=$(git branch --show-current)
+
+  # 通常のマージ済みブランチ（fast-forward/merge）の削除
+  git branch --merged | egrep -v '\*|master|main|development|dev|release' | xargs -r git branch -d
+
+  # squash mergeやrebase等で内容が取り込まれているブランチのチェックと削除
+  for branch in $(git branch | sed 's/..//' | egrep -v '^(master|main|development|dev|release)$' | grep -v "^$current_branch$"); do
+    # すでに消えていればスキップ
+    git show-ref --verify --quiet refs/heads/$branch || continue
+    # cherryで全コミットが取り込まれている場合（+がなければOK）
+    if [ -z "$(git cherry $current_branch $branch | grep '^+')" ]; then
+      echo "Deleting branch $branch (fully merged by squash/rebase/merge)"
+      git branch -D $branch
+    else
+      echo "Skipping branch $branch (unmerged commits remain)"
+    fi
+  done
+}
+
 zle -N fzf-history
 bindkey '^r' fzf-history
 
@@ -152,3 +168,24 @@ function op-stg () {
 function op-prod () {
   env AWS_DEFAULT_PROFILE=openpage_prod make run_ecs_shell ENV=production
 }
+
+function op-pf-stg () {
+  env AWS_DEFAULT_PROFILE=openpage_stg make forward_rds ENV=staging
+}
+
+function op-pf-prod () {
+  env AWS_DEFAULT_PROFILE=openpage_prod make forward_rds ENV=production
+}
+
+function ap-stg () {
+  export AWS_PROFILE=openpage_stg
+}
+
+function ap-prod () {
+  export AWS_PROFILE=openpage_prod
+}
+
+function ap-default () {
+  unset AWS_PROFILE
+}
+

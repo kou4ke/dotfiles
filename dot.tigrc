@@ -4,10 +4,14 @@ set main-view = id date author commit-title:graph=yes,refs=yes
 color cursor  black  green
 
 bind main    ! !git reset %(commit)
+bind main    <Ctrl-x> !git checkout %(commit)
 
 bind main    <Ctrl-r> !git rebase -i %(commit)
 bind diff    <Ctrl-r> !git rebase -i %(commit)
 
 bind status  A !git commit --amend
+bind status  N !git rebase --continue
+bind status  B !git rebase --abort
 
 bind generic P ?git push -u %(remote) %(repo:head)
+bind generic <Ctrl-t> ?git stash

@@ -10,6 +10,7 @@
 	cp = cherry-pick -x
 	di = diff
 	pl = pull --no-commit --rebase
+	spl = "!git stash && git pull --no-commit --rebase && git stash pop"
 	dc = diff --cached
 	cl = config --list
 	sw = switch
@@ -19,9 +20,13 @@
   qa = "!git checkout qa && git pull --no-commit --rebase"
 	r = "!hub pull-request show $1"
 	rq = "!hub pull-request -F .github/PULL_REQUEST_TEMPLATE.md -d -m $1"
-	i = !hub issue
+	i = !hub issue -a $GITHUB_USER
+	ia = !hub issue
 	ic = !hub issue create -m "$1"
+	it = !hub issue create -m "$1" -F .github/ISSUE_TEMPLATE/wishlist_request.md
 	ib = "!hub browse -- issues/$1"
+	closed-issue = "!gh issue list -s closed --json number,title,closedAt -q '[.[] | [.number, .closedAt, .title]] | ([\"issue\", \"closedAt\",\"title\"], .[]) | @csv' -L 1000"
+	closed-pr = "!gh pr list -s closed --json number,title,closedAt -q '[.[] | [.number, .closedAt, .title]] | ([\"pull request\", \"closedAt\",\"title\"], .[]) | @csv' -L 1000"
 	clean-branch = !git branch --merged | egrep -v '\\*|master|main|development|dev|release' | xargs git branch -d
 [color]
 	ui = true
@@ -54,3 +59,5 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[url "git@github.com:"]
+	insteadOf = https://github.com/
