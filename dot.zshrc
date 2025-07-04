@@ -188,6 +188,7 @@ case ${OSTYPE} in
         alias -g vim='nvim'
         alias -g cop='nvim +CopilotChat'
         alias xclip='xclip -selection clipboard'
+        alias wv='wslview'
         export GIT_EDITOR='nvim'
         ;;
 esac
