@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "",
+      "",
+      ""
+    ],
+    "deny": [
+      "Bash(curl:*)"
+    ]
+  },
+  "env": {
+    "CLAUDE_CODE_USE_BEDROCK": "1",
+    "ANTHROPIC_MODEL": "arn:aws:bedrock:ap-northeast-1:071324598352:inference-profile/apac.anthropic.claude-3-sonnet-20240229-v1:0",
+    "ANTHROPIC_SMALL_FAST_MODEL": "arn:aws:bedrock:ap-northeast-1:071324598352:inference-profile/apac.anthropic.claude-3-sonnet-20240229-v1:0",
+    "AWS_REGION": "ap-northeast-1"
+  }
+}

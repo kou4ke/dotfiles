@@ -3,3 +3,6 @@
 *.swp
 /dot.vim/sonictemplate/text/
 /dot.config/karabiner/automatic_backups/
+/dot.claude/todos/
+/dot.claude/statsig/
+/dot.claude/**.md
