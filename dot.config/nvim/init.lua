@@ -161,6 +161,11 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 })
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.drawio",
+  command = "set filetype=xml"
+})
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = { "*.toml", "*.csv", "*.tsv" },
   callback = function()
     vim.opt_local.filetype = vim.fn.expand("%:e")
