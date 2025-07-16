@@ -207,6 +207,10 @@ if [ -e $HOME/.zsh_anyenv ];then
     source $HOME/.zsh_anyenv
 fi
 
+if [ -e $HOME/.zsh_copilot ];then
+    source $HOME/.zsh_copilot
+fi
+
 # 初回シェル時のみ tmux実行
 if [ $SHLVL = 1 ]; then
   tmux attach || tmux
