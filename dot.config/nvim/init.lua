@@ -198,12 +198,9 @@ vim.api.nvim_create_user_command('SpaceH2toZen', function()
 end, {})
 
 -- ペーストモードでペースト後に^Mを削除する設定
--- vim.api.nvim_create_autocmd("InsertLeave", {
---     pattern = "*",
---     callback = function()
---         vim.cmd([[%s/\r//g]])
---     end,
--- })
+vim.api.nvim_create_user_command('CrDelete', function()
+  vim.cmd([[%s/\r//g]])
+end, {})
 
 -- Better whitespace settings
 vim.g.strip_whitespace_on_save = 0
