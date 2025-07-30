@@ -14,8 +14,8 @@ bindings = [
   { mouse = "Left", mods = "Shift", action = "Copy" },
 ]
 
-# [terminal]
-# shell = { program = "/bin/zsh", args = ["--login"] }
+[terminal]
+shell = { program = "wsl", args = ["~"] }
 
 [font]
 size = 11
