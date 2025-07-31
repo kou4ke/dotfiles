@@ -6,6 +6,7 @@ vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. 'c', '<cmd>CopilotChat<cr>',
 vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. 'p', '<cmd>CopilotChatPrompts<cr>', { desc = 'CopilotChat predefined prompts' })
 vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. 'e', '<cmd>CopilotChatExplain<cr>', { desc = 'CopilotChat Explain' })
 vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. 't', '<cmd>CopilotChatTranslateJE<cr>', { desc = 'CopilotChat TranslateJE' })
+vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. '[', '<cmd>CopilotChatClose<cr>', { desc = 'CopilotChat Close' })
 
 
 require("CopilotChat").setup({
@@ -65,7 +66,8 @@ vim.api.nvim_create_autocmd("BufEnter", {
         local content = f:read("*a")
         f:close()
         vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.split(content, "\n"))
-        vim.api.nvim_win_set_cursor(0, {vim.api.nvim_buf_line_count(0), 0})
+        local row = vim.api.nvim_buf_line_count(0)
+        vim.api.nvim_win_set_cursor(0, {math.max(row - 2, 1), 0})
       end
     end
   end,
