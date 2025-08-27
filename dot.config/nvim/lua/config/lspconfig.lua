@@ -16,15 +16,20 @@ lspconfig.intelephense.setup{
     filetypes = { "php" },
     settings = {
         intelephense = {
+            environment = {
+                includePaths = { "vendor/laravel/framework/src", "vendor" }
+            },
             files = {
-                maxSize = 5000000;
-            };
-        };
+                maxSize = 5000000,
+                exclude = { "**/storage/**", "**/bootstrap/cache/**" }
+            },
+            stubs = { "laravel", "eloquent", "blade" }
+        }
     },
     capabilities = capabilities,
     on_attach = lsp_diagnostic.on_attach,
 }
--- Vue.js (Volar) の設定
+-- volar (Volar Language Server) の設定
 lspconfig.volar.setup{
     cmd = { "vls" },
     filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
@@ -47,6 +52,18 @@ lspconfig.dockerls.setup{
     capabilities = capabilities,
     on_attach = lsp_diagnostic.on_attach,
 }
+-- docker-compose (Docker Compose Language Server) の設定
+lspconfig.docker_compose_language_service.setup{
+   cmd = { "docker-compose-language-service", "--stdio" },
+   filetypes = { "docker-compose" },
+   capabilities = capabilities,
+   on_attach = lsp_diagnostic.on_attach,
+   settings = {
+     dockerCompose = {
+       filetypes = { "docker-compose" },
+     },
+   },
+ }
 -- YAML (YAML Language Server) の設定
 lspconfig.yamlls.setup{
     capabilities = capabilities,
@@ -100,6 +117,14 @@ lspconfig.tailwindcss.setup{
 --     },
 --     capabilities = capabilities
 -- }
+-- Vim (Vim Language Server) の設定
+lspconfig.vimls.setup{
+    cmd = { "vim-language-server", "--stdio" },
+    filetypes = { "vim" },
+    capabilities = capabilities,
+    on_attach = lsp_diagnostic.on_attach,
+}
+
 -- lua (lua Language Server) の設定
 lspconfig.lua_ls.setup{
     filetypes = { "lua" },
