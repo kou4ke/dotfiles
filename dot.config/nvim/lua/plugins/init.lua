@@ -28,6 +28,16 @@ return {
     end,
   },
 
+  -- Claude Code
+  {
+    "greggh/claude-code.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- Required for git operations
+    },
+    config = function()
+      require("config.claude-code")
+    end
+  } ,
 
   -- LSP関連
   {
