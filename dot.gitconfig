@@ -16,6 +16,7 @@
 	sw = switch
 	re = restore
 	sm = submodule
+	wt = worktree
   ms = "!( if [ `git config branch.master.remote` ]; then git checkout master; else git checkout main; fi) && git pull --no-commit --rebase"
   qa = "!git checkout qa && git pull --no-commit --rebase"
 	r = "!hub pull-request show $1"
@@ -25,8 +26,8 @@
 	ic = !hub issue create -m "$1"
 	it = !hub issue create -m "$1" -F .github/ISSUE_TEMPLATE/wishlist_request.md
 	ib = "!hub browse -- issues/$1"
-	closed-issue = "!gh issue list -s closed --json number,title,closedAt -q '[.[] | [.number, .closedAt, .title]] | ([\"issue\", \"closedAt\",\"title\"], .[]) | @csv' -L 1000"
-	closed-pr = "!gh pr list -s closed --json number,title,closedAt -q '[.[] | [.number, .closedAt, .title]] | ([\"pull request\", \"closedAt\",\"title\"], .[]) | @csv' -L 1000"
+	closed-issue = "!gh issue list -s closed --json number,title,closedAt -q '[.[] | [.number, .closedAt, .title]] | ([\"issue\", \"closedAt\",\"title\"], .[]) | @csv' -L 3000"
+	closed-pr = "!gh pr list -s closed --json number,title,closedAt -q '[.[] | [.number, .closedAt, .title]] | ([\"pull request\", \"closedAt\",\"title\"], .[]) | @csv' -L 3000"
 	clean-branch = !git branch --merged | egrep -v '\\*|master|main|development|dev|release' | xargs git branch -d
 [color]
 	ui = true
