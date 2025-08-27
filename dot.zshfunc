@@ -89,7 +89,23 @@ function hs() {
 }
 
 function fzf-src () {
-  local selected_dir=$(ghq list -p | fzf --reverse --query "$LBUFFER")
+  local lines=()
+  # ghqリポジトリ一覧 + worktree一覧をlinesに格納
+  for repo in $(ghq list -p); do
+    lines+=("$repo")
+    if [ -d "$repo" ]; then
+      # worktreeがあれば抽出
+      git -C "$repo" worktree list --porcelain | awk '/^worktree /{print $2}' | while read wt; do
+        # ghq root配下なら相対パス表示も
+        if [[ $wt != "$repo" ]]; then
+          lines+=("$wt")
+        fi
+      done
+    fi
+  done
+
+  # fzf実行
+  local selected_dir=$(printf "%s\n" "${lines[@]}" | fzf --reverse --query "$LBUFFER")
   if [ -n "$selected_dir" ]; then
     BUFFER="cd ${selected_dir}"
     zle accept-line
@@ -98,6 +114,7 @@ function fzf-src () {
 }
 zle -N fzf-src
 bindkey '^]' fzf-src
+
 
 function _fzf_get_ls_item () {
   local fzf_ls_item=$(ls -la | fzf --query "$LBUFFER" | awk '{print $(NF)}')
