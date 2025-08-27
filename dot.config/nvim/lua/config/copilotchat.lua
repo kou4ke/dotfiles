@@ -5,6 +5,7 @@ vim.keymap.set('n', copilotchat_prefix .. 'o', ':CopilotChatToggle<CR>')
 vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. 'c', '<cmd>CopilotChat<cr>', { desc = 'CopilotChat' })
 vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. 'p', '<cmd>CopilotChatPrompts<cr>', { desc = 'CopilotChat predefined prompts' })
 vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. 'e', '<cmd>CopilotChatExplain<cr>', { desc = 'CopilotChat Explain' })
+vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. 'r', '<cmd>CopilotChatReview<cr>', { desc = 'CopilotChat Review' })
 vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. 't', '<cmd>CopilotChatTranslateJE<cr>', { desc = 'CopilotChat TranslateJE' })
 vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. '[', '<cmd>CopilotChatClose<cr>', { desc = 'CopilotChat Close' })
 
@@ -22,8 +23,8 @@ require("CopilotChat").setup({
   auto_select_last = false,
   window = {
     layout = "float", -- "float" または "split"
-    width = 0.6,      -- 画面幅の50%（float時）
-    height = 0.6,     -- 画面高さの50%（float時）
+    width = 0.7,      -- 画面幅の70%（float時）
+    height = 0.7,     -- 画面高さの70%（float時）
     -- direction = "left", -- "left" または "right"（split時）
     -- splitの場合は direction = "right" なども指定可能
     close_on_escape = true,
