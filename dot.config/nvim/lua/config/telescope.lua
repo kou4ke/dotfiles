@@ -17,6 +17,15 @@ require('telescope').setup{
   defaults = {
     -- Default configuration for telescope goes here:
     -- config_key = value,
+    vimgrep_arguments = {
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--ignore-case',  -- ←追加すれば常に無視
+    },
     mappings = {
 
       i = {
