@@ -1,19 +1,30 @@
+local claudecode_prefix = ",e"  -- または好みのプレフィックス
+vim.keymap.set('n', claudecode_prefix .. 'o', ':CopilotChatToggle<CR>')
+vim.keymap.set( { 'n', 'x' }, claudecode_prefix .. 'e', '<cmd>ClaudeCode<cr>', { desc = 'ClaudeCode' })
+-- vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. 'p', '<cmd>CopilotChatPrompts<cr>', { desc = 'CopilotChat predefined prompts' })
+-- vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. 'e', '<cmd>CopilotChatExplain<cr>', { desc = 'CopilotChat Explain' })
+-- vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. 'r', '<cmd>CopilotChatReview<cr>', { desc = 'CopilotChat Review' })
+-- vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. 't', '<cmd>CopilotChatTranslateJE<cr>', { desc = 'CopilotChat TranslateJE' })
+-- vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. '[', '<cmd>CopilotChatClose<cr>', { desc = 'CopilotChat Close' })
+
 require("claude-code").setup({
   -- Terminal window settings
   window = {
-    split_ratio = 0.3,      -- Percentage of screen for the terminal window (height for horizontal, width for vertical splits)
-    position = "botright",  -- Position of the window: "botright", "topleft", "vertical", "float", etc.
+    split_ratio = 0.5,      -- Percentage of screen for the terminal window (height for horizontal, width for vertical splits)
+    position = "float",  -- Position of the window: "botright", "topleft", "vertical", "float", etc.
     enter_insert = true,    -- Whether to enter insert mode when opening Claude Code
     hide_numbers = true,    -- Hide line numbers in the terminal window
     hide_signcolumn = true, -- Hide the sign column in the terminal window
 
     -- Floating window configuration (only applies when position = "float")
     float = {
-      width = "80%",        -- Width: number of columns or percentage string
-      height = "80%",       -- Height: number of rows or percentage string
-      row = "center",       -- Row position: number, "center", or percentage string
-      col = "center",       -- Column position: number, "center", or percentage string
-      relative = "editor",  -- Relative to: "editor" or "cursor"
+      width = "70%",        -- Width: number of columns or percentage string
+      height = "70%",       -- Height: number of rows or percentage string
+      -- row = "center",       -- Row position: number, "center", or percentage string
+      -- col = "center",       -- Column position: number, "center", or percentage string
+      row = "28%",       -- Row position: number, "center", or percentage string
+      col = "70%",       -- Column position: number, "center", or percentage string
+      relative = "editor",  -- Relative tcco: "editor" or "cursor"
       border = "rounded",   -- Border style: "none", "single", "double", "rounded", "solid", "shadow"
     },
   },
