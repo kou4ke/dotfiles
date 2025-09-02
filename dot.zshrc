@@ -57,12 +57,23 @@ autoload -Uz add-zsh-hook
 zstyle ':vcs_info:*' formats '%F{cyan}(%s)-[%b]%f'
 zstyle ':vcs_info:*' actionformats '%F{red}(%s)-[%b|%a]%f'
 
+# プロンプト
+# 1行表示
+# PROMPT="%~ %# "
+# 2行表示
+PROMPT="%{${fg[yellow]}%}%D %T%{${reset_color}%}%{${fg[green]}%}[%n@%m]%{${reset_color}%} ${vcs_info_msg_0_} %~
+%# "
+
 function _update_vcs_info_msg() {
     LANG=en_US.UTF-8 vcs_info
     if [[ -n $vcs_info_msg_0_ ]]; then
-        RPROMPT="${vcs_info_msg_0_}"
+        # PROMPT="${PROMPT} ${vcs_info_msg_0_}"
+        PROMPT="%{${fg[yellow]}%}%D %T%{${reset_color}%}%{${fg[green]}%}[%n@%m]%{${reset_color}%} ${vcs_info_msg_0_} %~
+%# "
     else
-        RPROMPT=""
+        PROMPT="%{${fg[yellow]}%}%D %T%{${reset_color}%}%{${fg[green]}%}[%n@%m]%{${reset_color}%} %~
+%# "
+        # PROMPT="${PROMPT}"
     fi
 }
 add-zsh-hook precmd _update_vcs_info_msg
@@ -87,14 +98,6 @@ add-zsh-hook precmd _update_vcs_info_msg
 #
 #
 #
-# プロンプト
-# 1行表示
-# PROMPT="%~ %# "
-# 2行表示
-PROMPT="%{${fg[yellow]}%}%D %T%{${reset_color}%}%{${fg[green]}%}[%n@%m]%{${reset_color}%} ${vcs_info_msg_0_} %~
-%# "
-
-
 
 
 ########################################
