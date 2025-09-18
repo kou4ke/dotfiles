@@ -3,6 +3,7 @@ local wezterm = require 'wezterm'
 return {
   color_scheme = "Wombat",
   selection_word_boundary = ",│`|:\"' ()[]{}<>\t",
+  use_ime = true,
   keys = {
     {key="Enter", mods="ALT", action=wezterm.action.ToggleFullScreen},
   },
@@ -42,4 +43,6 @@ return {
   },
   -- window_decorations = "RESIZE|TITLE|MENU|MINIMIZE|MAXIMIZE|CLOSE",
   window_background_opacity = 0.85,
+
+  hide_tab_bar_if_only_one_tab = true,
 }
