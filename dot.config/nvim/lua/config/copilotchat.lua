@@ -2,7 +2,7 @@ local copilotchat_prefix = ",c"  -- または好みのプレフィックス
 local default_prompts = require('CopilotChat.config.prompts')
 local in_japanese = 'なお、説明は日本語でお願いします。'
 vim.keymap.set('n', copilotchat_prefix .. 'o', ':CopilotChatToggle<CR>')
-vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. 'c', '<cmd>CopilotChat<cr>', { desc = 'CopilotChat' })
+vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. 'c', '<cmd>CopilotChatToggle<cr>', { desc = 'CopilotChat' })
 vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. 'p', '<cmd>CopilotChatPrompts<cr>', { desc = 'CopilotChat predefined prompts' })
 vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. 'e', '<cmd>CopilotChatExplain<cr>', { desc = 'CopilotChat Explain' })
 vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. 'r', '<cmd>CopilotChatReview<cr>', { desc = 'CopilotChat Review' })
@@ -16,19 +16,20 @@ require("CopilotChat").setup({
   -- Optional, defaults to `false`
   auto_close = true,
   -- Optional, defaults to `false`
-  auto_select = false,
+  auto_select = true,
   -- Optional, defaults to `false`
   auto_select_first = false,
   -- Optional, defaults to `false`
   auto_select_last = false,
+  close_on_escape = true,
   window = {
     layout = "float", -- "float" または "split"
     width = 0.7,      -- 画面幅の70%（float時）
     height = 0.7,     -- 画面高さの70%（float時）
     -- direction = "left", -- "left" または "right"（split時）
     -- splitの場合は direction = "right" なども指定可能
-    close_on_escape = true,
   },
+
   prompts = vim.tbl_deep_extend('force', default_prompts, {
     -- ビルトインのプロンプトを日本語化
     Commit = { prompt = default_prompts.Commit.prompt .. in_japanese },
