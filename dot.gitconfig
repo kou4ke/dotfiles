@@ -13,7 +13,7 @@
 	spl = "!git stash && git pull --no-commit --rebase && git stash pop"
 	dc = diff --cached
 	cl = config --list
-	sw = switch
+	sw = !"git fetch && git switch"
 	re = restore
 	sm = submodule
 	wt = worktree
