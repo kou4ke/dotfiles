@@ -179,34 +179,33 @@ zle -N fzf-history
 bindkey '^r' fzf-history
 
 function op-stg () {
-  env AWS_DEFAULT_PROFILE=openpage_stg make run_ecs_shell ENV=staging
+  env AWS_DEFAULT_PROFILE=${KEYWORD1}_stg make run_ecs_shell ENV=staging
 }
 
 function op-prod () {
-  env AWS_DEFAULT_PROFILE=openpage_prod make run_ecs_shell ENV=production
+  env AWS_DEFAULT_PROFILE=${KEYWORD1}_prod make run_ecs_shell ENV=production
 }
 
 function op-pf-stg () {
-  env AWS_DEFAULT_PROFILE=openpage_stg make forward_rds ENV=staging
+  env AWS_DEFAULT_PROFILE=${KEYWORD1}_stg make forward_rds ENV=staging
 }
 
 function op-pf-prod () {
-  env AWS_DEFAULT_PROFILE=openpage_prod make forward_rds ENV=production
+  env AWS_DEFAULT_PROFILE=${KEYWORD1}_prod make forward_rds ENV=production
 }
 
 function ap-stg () {
-  export AWS_PROFILE=openpage_stg
+  export AWS_PROFILE=${KEYWORD1}_stg
 }
 
 function ap-prod () {
-  export AWS_PROFILE=openpage_prod
+  export AWS_PROFILE=${KEYWORD1}_prod
 }
 
 function ap-sec () {
-  export AWS_PROFILE=openpage_security
+  export AWS_PROFILE=${KEYWORD1}_security
 }
 
 function ap-default () {
   unset AWS_PROFILE
 }
-
