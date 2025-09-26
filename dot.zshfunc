@@ -202,6 +202,10 @@ function ap-prod () {
   export AWS_PROFILE=openpage_prod
 }
 
+function ap-sec () {
+  export AWS_PROFILE=openpage_security
+}
+
 function ap-default () {
   unset AWS_PROFILE
 }
