@@ -1,4 +1,5 @@
 local wezterm = require 'wezterm'
+local act = wezterm.action
 
 return {
   color_scheme = "Wombat",
@@ -14,10 +15,27 @@ return {
       action = wezterm.action.PasteFrom("Clipboard"),
     },
     {
-      event = { Down = { streak = 1, button = "Left" } },
+      event = { Drag = { streak = 1, button = "Left" } },
       mods = "SHIFT",
-      action = wezterm.action.CopyTo("ClipboardAndPrimarySelection"),
+      action = wezterm.action_callback(function(window, pane)
+        local selection = window:get_selection_text_for_pane(pane)
+        if selection and #selection >= 2 then
+          window:perform_action(wezterm.action.CopyTo("ClipboardAndPrimarySelection"), pane)
+        end
+      end),
     },
+    -- Bind 'Up' event of CTRL-Click to open hyperlinks
+    {
+      event = { Up = { streak = 1, button = 'Left' } },
+      mods = 'CTRL',
+      action = act.OpenLinkAtMouseCursor,
+    },
+    -- Disable the 'Down' event of CTRL-Click to avoid weird program behaviors
+    {
+      event = { Down = { streak = 1, button = 'Left' } },
+      mods = 'CTRL',
+      action = act.Nop,
+    }
   },
   default_prog = { "wsl.exe" },
   font_size = 11,
