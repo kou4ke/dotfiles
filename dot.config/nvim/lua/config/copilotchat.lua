@@ -3,6 +3,7 @@ local default_prompts = require('CopilotChat.config.prompts')
 local in_japanese = 'なお、説明は日本語でお願いします。'
 vim.keymap.set('n', copilotchat_prefix .. 'o', ':CopilotChatToggle<CR>')
 vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. 'c', '<cmd>CopilotChatToggle<cr>', { desc = 'CopilotChat' })
+vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. 'a', '<cmd>CopilotChat<cr>', { desc = 'CopilotChat Ask' })
 vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. 'p', '<cmd>CopilotChatPrompts<cr>', { desc = 'CopilotChat predefined prompts' })
 vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. 'e', '<cmd>CopilotChatExplain<cr>', { desc = 'CopilotChat Explain' })
 vim.keymap.set( { 'n', 'x' }, copilotchat_prefix .. 'r', '<cmd>CopilotChatReview<cr>', { desc = 'CopilotChat Review' })
