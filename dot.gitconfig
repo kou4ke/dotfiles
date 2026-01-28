@@ -1,31 +1,33 @@
 [push]
 	default = current
 [alias]
-	st = status
 	f = fetch
 	b = branch
 	bl = !ghq list
 	br= browse
+	cl = config --list
 	co = checkout
 	cp = cherry-pick -x
 	di = diff
-	pl = pull --no-commit --rebase
-	spl = "!git stash && git pull --no-commit --rebase && git stash pop"
 	dc = diff --cached
-	cl = config --list
-	sw = !"git fetch && git switch"
-	re = restore
-	sm = submodule
-	wt = worktree
-  ms = "!( if [ `git config branch.master.remote` ]; then git checkout master; else git checkout main; fi) && git pull --no-commit --rebase"
-  qa = "!git checkout qa && git pull --no-commit --rebase"
-	r = "!hub pull-request show $1"
-	rq = "!hub pull-request -F .github/PULL_REQUEST_TEMPLATE.md -d -m $1"
 	i = !hub issue -a $GITHUB_USER
 	ia = !hub issue
 	ic = !hub issue create -m "$1"
 	it = !hub issue create -m "$1" -F .github/ISSUE_TEMPLATE/wishlist_request.md
 	ib = "!hub browse -- issues/$1"
+	ms = "!( if [ `git config branch.master.remote` ]; then git checkout master; else git checkout main; fi) && git pull --no-commit --rebase"
+	pl = pull --no-commit --rebase
+	pls = "!git stash && git pull --no-commit --rebase && git stash pop"
+	re = restore
+	r = "!hub pull-request show $1"
+	rq = "!hub pull-request -F .github/PULL_REQUEST_TEMPLATE.md -d -m $1"
+	st = status
+	sm = submodule
+	sw = !"git fetch && git switch"
+	wt = worktree
+	wtc = "!f() { git worktree add ../../../worktree/$1 $1; }; f"
+	wtl = worktree list
+	wtr = "!f() { git worktree remove ../../../worktree/$1; }; f"
 	closed-issue = "!gh issue list -s closed --json number,title,closedAt -q '[.[] | [.number, .closedAt, .title]] | ([\"issue\", \"closedAt\",\"title\"], .[]) | @csv' -L 3000"
 	closed-pr = "!gh pr list -s closed --json number,title,closedAt -q '[.[] | [.number, .closedAt, .title]] | ([\"pull request\", \"closedAt\",\"title\"], .[]) | @csv' -L 3000"
 	clean-branch-squash = "!f() { base=$(git branch --list main | grep main && echo main || echo master); git checkout $base && for branch in $(git branch | egrep -v '\\*|main|master|development|dev|release'); do if ! git ls-remote --exit-code --heads origin \"$branch\" &>/dev/null; then git branch -D \"$branch\"; fi; done; }; f"
@@ -42,12 +44,6 @@
 [pull]
 	ff = only
 
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [ghq]
 	vcs = git
 	root = ~/git
