@@ -8,7 +8,7 @@ null_ls.setup({
         -- Lintツールの設定
         null_ls.builtins.diagnostics.eslint_d,  -- 高速なESLint
         -- null_ls.builtins.diagnostics.eslint,  -- 通常のESLint（高速版を使わない場合）
-        null_ls.builtins.formatting.tflint,  -- Terraformのフォーマット
+        null_ls.builtins.diagnostics.tflint,  -- Terraformのリント
 
         -- フォーマットツールの設定
         null_ls.builtins.formatting.prettier.with({
