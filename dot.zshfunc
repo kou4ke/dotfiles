@@ -164,6 +164,21 @@ function clean-branch() {
   # 通常のマージ済みブランチ（fast-forward/merge）の削除
   git branch --merged | egrep -v '\*|master|main|development|dev|release' | xargs -r git branch -d
 
+  # remoteのマージ済みブランチのチェックと削除確認
+  for branch in $(git branch -r | grep -vE 'origin/(master|main|development|dev|release|HEAD)' | sed 's|origin/||'); do
+    # すでに消えていればスキップ
+    git show-ref --verify --quiet refs/heads/$branch || continue
+    # remoteにマージされているか確認
+    if git branch --merged origin/$current_branch | grep -q "^  $branch$"; then
+      read -p "Remote branch '$branch' is merged. Delete local branch? (y/n): " yn
+      if [ "$yn" = "y" ]; then
+        git branch -D $branch
+      else
+        echo "Skipping branch $branch"
+      fi
+    fi
+  done
+
   # squash mergeやrebase等で内容が取り込まれているブランチのチェックと削除
   for branch in $(git branch | sed 's/..//' | egrep -v '^(master|main|development|dev|release)$' | grep -v "^$current_branch$"); do
     # すでに消えていればスキップ
@@ -177,16 +192,31 @@ function clean-branch() {
     fi
   done
 }
-
 zle -N fzf-history
 bindkey '^r' fzf-history
+
+function op-pentest () {
+  env AWS_DEFAULT_PROFILE=${KEYWORD1}_stg make run_ecs_shell ENV=pentest
+}
 
 function op-stg () {
   env AWS_DEFAULT_PROFILE=${KEYWORD1}_stg make run_ecs_shell ENV=staging
 }
 
+function op-stg-horizon () {
+  env AWS_DEFAULT_PROFILE=${KEYWORD1}_stg make run_ecs_shell_horizon ENV=staging
+}
+
 function op-prod () {
   env AWS_DEFAULT_PROFILE=${KEYWORD1}_prod make run_ecs_shell ENV=production
+}
+
+function op-prod-horizon () {
+  env AWS_DEFAULT_PROFILE=${KEYWORD1}_prod make run_ecs_shell_horizon ENV=production
+}
+
+function op-pf-pentest () {
+  env AWS_DEFAULT_PROFILE=${KEYWORD1}_stg make forward_rds ENV=pentest
 }
 
 function op-pf-stg () {
