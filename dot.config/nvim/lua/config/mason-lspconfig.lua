@@ -2,7 +2,10 @@ require('mason-lspconfig').setup {
     ensure_installed = {
         "pyright",
         "intelephense",
-        "vuels",
+        -- ここは mason-lspconfig v1 系のサーバー名。lspconfig 側の新名称（vue_ls / ts_ls）とは
+        -- 別系統なので、プラグインを v1.29.0 に固定している間は旧名のままで正しく解決される。
+        -- volar → vue-language-server, tsserver → typescript-language-server。
+        -- Vetur（vuels）は lspconfig の新形式に定義が無く設定からも外したので削除した。
         "volar",
         "tsserver",
         "terraformls",
