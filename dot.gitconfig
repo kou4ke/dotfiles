@@ -23,7 +23,8 @@
 	rq = "!hub pull-request -F .github/PULL_REQUEST_TEMPLATE.md -d -m $1"
 	st = status
 	sm = submodule
-	sw = !"git fetch && git switch"
+	; sw = !"git fetch && git switch"
+	sw = !"f() { git fetch && git switch \"$@\" && git pull --ff-only; }; f"
 	wt = worktree
 	wtc = "!f() { git worktree add ../../../worktree/$1 $1; }; f"
 	wtl = worktree list
