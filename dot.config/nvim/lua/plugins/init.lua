@@ -68,12 +68,16 @@ return {
     end,
   },
 
-  -- null-ls
+  -- none-ls (アーカイブされた null-ls.nvim の後継 fork)
+  -- eslint 系ソースは本体から none-ls-extras.nvim に切り出されている
   {
-    "jose-elias-alvarez/null-ls.nvim",
-    requires = { "nvim-lua/plenary.nvim" },
+    "nvimtools/none-ls.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvimtools/none-ls-extras.nvim",
+    },
     config = function()
-      require("config.null-ls")
+      require("config.none-ls")
     end,
   },
 
